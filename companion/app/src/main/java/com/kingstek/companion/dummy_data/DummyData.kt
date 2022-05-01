@@ -16,10 +16,10 @@ class DummyData {
     private val simplePrayers = HomeModel("Simple Prayers", "Start and end your day with prayers", R.drawable.rosary_bible)
     private val calendar = HomeModel("Calendar", "Get a daily list of saints, feasts and memorials", R.drawable.rosary_bible)
     private val catechism = HomeModel("Catechism", "Know your faith", R.drawable.rosary_bible)
-    private val blank = HomeModel("Blank", "Know your faith", R.drawable.rosary_bible)
-    private val empty = HomeModel("Empty", "Know your faith", R.drawable.rosary_bible)
+//    private val blank = HomeModel("Blank", "Know your faith", R.drawable.rosary_bible)
+//    private val empty = HomeModel("Empty", "Know your faith", R.drawable.rosary_bible)
 
-    val homeList: ArrayList<HomeModel> = arrayListOf(parish, simplePrayers, calendar, catechism, blank, empty)
+    val homeList: ArrayList<HomeModel> = arrayListOf(parish, simplePrayers, calendar, catechism)
 
     val newsList: ArrayList<NewsModel> = arrayListOf(dataone, datatwo, datathree, datafour)
 
