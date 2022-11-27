@@ -12,14 +12,38 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_parish"
         android:name="com.kingstek.companion.ui.parish.ParishFragment"
-        android:label="@string/menu_gallery"
+        android:label="@string/menu_parish"
         tools:layout="@layout/fragment_parish" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_news"
         android:name="com.kingstek.companion.ui.news.NewsFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_news"
         tools:layout="@layout/fragment_news" />
+
+    <fragment
+        android:id="@+id/nav_calender"
+        android:name="com.kingstek.companion.ui.calender.CalenderFragment"
+        android:label="@string/menu_calender"
+        tools:layout="@layout/fragment_calender" />
+
+    <fragment
+        android:id="@+id/nav_readings"
+        android:name="com.kingstek.companion.ui.readings.ReadingsFragment"
+        android:label="@string/menu_readings"
+        tools:layout="@layout/fragment_readings" />
+
+    <fragment
+        android:id="@+id/nav_catechism"
+        android:name="com.kingstek.companion.ui.catechism.CatechismFragment"
+        android:label="@string/menu_catechism"
+        tools:layout="@layout/fragment_catechism" />
+
+    <fragment
+        android:id="@+id/nav_prayers"
+        android:name="com.kingstek.companion.ui.prayers.PrayersFragment"
+        android:label="@string/menu_prayers"
+        tools:layout="@layout/fragment_prayers" />
 </navigation>

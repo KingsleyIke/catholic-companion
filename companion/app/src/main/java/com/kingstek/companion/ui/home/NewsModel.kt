@@ -6,6 +6,7 @@ import android.media.Image
 
 class NewsModel(
     val headline: String,
+    val detail: String,
     val headlineImage: Int
 ) {
 }

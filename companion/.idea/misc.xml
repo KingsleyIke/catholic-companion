@@ -3,20 +3,42 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/backround_rounded_dark_stroke.xml" value="0.229" />
+        <entry key="app/src/main/res/drawable-v24/backround_rounded_ox_bood.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable-v24/church_vector.xml" value="0.2285" />
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.2285" />
+        <entry key="app/src/main/res/drawable/ic_baseline_calendar_24.xml" value="0.229" />
+        <entry key="app/src/main/res/drawable/ic_baseline_catechism_2_24.xml" value="0.229" />
+        <entry key="app/src/main/res/drawable/ic_baseline_church_24.xml" value="0.229" />
+        <entry key="app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.229" />
+        <entry key="app/src/main/res/drawable/ic_baseline_news_24.xml" value="0.229" />
+        <entry key="app/src/main/res/drawable/ic_baseline_newspaper_24.xml" value="0.229" />
+        <entry key="app/src/main/res/drawable/ic_baseline_parish_24.xml" value="0.229" />
+        <entry key="app/src/main/res/drawable/ic_baseline_readings_24.xml" value="0.229" />
+        <entry key="app/src/main/res/drawable/ic_baseline_record_voice_over_24.xml" value="0.229" />
+        <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.229" />
+        <entry key="app/src/main/res/drawable/ic_menu_camera.xml" value="0.301" />
+        <entry key="app/src/main/res/drawable/ic_menu_gallery.xml" value="0.301" />
+        <entry key="app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.301" />
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.265625" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/app_bar_home.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/layout/content_home.xml" value="0.24947916666666667" />
+        <entry key="app/src/main/res/layout/fragment_admin.xml" value="0.3578125" />
+        <entry key="app/src/main/res/layout/fragment_feast_day.xml" value="0.3578125" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_maps.xml" value="0.3578125" />
+        <entry key="app/src/main/res/layout/fragment_news.xml" value="0.38376159667968757" />
         <entry key="app/src/main/res/layout/fragment_prayers.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.24947916666666667" />
-        <entry key="app/src/main/res/layout/home_cardview.xml" value="0.24947916666666667" />
+        <entry key="app/src/main/res/layout/home_cardview.xml" value="0.31574923547400613" />
         <entry key="app/src/main/res/layout/nav_header_home.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.24947916666666667" />
-        <entry key="app/src/main/res/layout/news_cardview.xml" value="0.24947916666666667" />
+        <entry key="app/src/main/res/layout/news_cardview.xml" value="0.3593899611363713" />
+        <entry key="app/src/main/res/menu-v26/activity_main_drawer.xml" value="0.3578125" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/menu/home.xml" value="0.24947916666666667" />
       </map>
