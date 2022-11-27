@@ -3,7 +3,7 @@ package com.kingstek.companion.ui.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.kingstek.companion.dummy_data.DummyData
+import com.kingstek.companion.ui.dummy_data.DummyData
 
 class HomeViewModel : ViewModel() {
 

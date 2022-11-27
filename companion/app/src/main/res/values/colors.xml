@@ -9,4 +9,15 @@
     <color name="white">#FFFFFFFF</color>
     <color name="primary_color">#F89606</color>
     <color name="Secondary_color">#035706</color>
+
+    <color name="main_color_dark">#550116</color>
+    <color name="main_color_light_dark">#880727</color>
+    <color name="main_color_light_updates">#CA4D6D</color>
+    <color name="main_color_light_login">#E54F75</color>
+    <color name="main_color_light_light">#DC6C6C</color>
+    <color name="sub_color_semi_light">#FEB1C4</color>
+    <color name="sub_color_mid_light">#EEC3C3</color>
+    <color name="sub_color_very_light">#E9D3D3</color>
+    <color name="gray">#D9D9D9</color>
+    <color name="black_transparent">#cc000000</color>
 </resources>

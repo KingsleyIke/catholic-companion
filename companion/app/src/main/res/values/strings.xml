@@ -11,12 +11,16 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Parish</string>
-    <string name="menu_slideshow">News</string>
+    <string name="menu_parish">Parish</string>
+    <string name="menu_news">News</string>
+    <string name="menu_readings">Daily Reading</string>
+    <string name="menu_calender">Calender</string>
+    <string name="menu_catechism">Catechism</string>
+    <string name="menu_prayers">Prayers</string>
     <string name="admin">Admin</string>
     <string name="setting">Setting</string>
     <string name="contact_us">Contact Us</string>
-    <string name="powered_by">Powered by</string>
+    <string name="powered_by">Powered by  KingsTeck</string>
     <string name="share_with_friends">Share with friends</string>
     <string name="catholic_companion">Catholic Companion</string>
     <string name="news">News</string>

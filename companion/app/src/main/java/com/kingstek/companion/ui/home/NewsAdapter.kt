@@ -13,6 +13,7 @@ class NewsAdapter(private val newsModel: MutableLiveData<List<NewsModel>>) : Rec
 
     inner class ViewHolder (itemView : View) : RecyclerView.ViewHolder(itemView) {
         val newsHeadline = itemView.findViewById<TextView>(R.id.news_headline)
+        val newsdetail = itemView.findViewById<TextView>(R.id.news_details)
         val newsImage = itemView.findViewById<ImageView>(R.id.news_image)
     }
 
@@ -28,6 +29,9 @@ class NewsAdapter(private val newsModel: MutableLiveData<List<NewsModel>>) : Rec
 
         val headline = holder.newsHeadline
         headline.text = news?.headline
+
+        val detail = holder.newsdetail
+        detail.text = news?.detail
 
         val image = holder.newsImage
         news?.headlineImage?.let { image.setImageResource(it) }
