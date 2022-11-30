@@ -5,11 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.compose.animation.core.animateDpAsState
 import androidx.lifecycle.MutableLiveData
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.kingstek.companion.R
+import com.kingstek.companion.dummy_data.NewsModel
 
 class NewsAdapter(private val newsModel: MutableLiveData<List<NewsModel>>, private var mListner: onItemClickListener) : RecyclerView.Adapter<NewsAdapter.ViewHolder> () {
 

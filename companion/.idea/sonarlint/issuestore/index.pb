@@ -1,14 +1,8 @@
 
-{
-Kapp/src/main/java/com/kingstek/companion/ui/parish/ParishDetailsFragment.kt,4/6/466be2346a4931fb0f325b20b77120dc52b2a8cb
-t
-Dapp/src/main/java/com/kingstek/companion/ui/parish/ParishFragment.kt,8/f/8fbfff81230dc1faf83419a76827a880aa4aa1a3
 r
 Bapp/src/main/java/com/kingstek/companion/ui/admin/AdminFragment.kt,f/d/fd3136457fc659e7a427c042404b88ec0a55c055
 t
 Dapp/src/main/java/com/kingstek/companion/ui/location/MapsFragment.kt,7/8/78f37da3f5cc1104c87560fc72d4c354ece08fff
-m
-=app/src/main/java/com/kingstek/companion/ui/home/HomeModel.kt,f/f/ff042f4870416133fe139a936cda20d9f7f1d071
 \
 ,.idea/libraries/Gradle__junit_junit_4_12.xml,7/d/7d11830400a6f0abe25d084d24ade913b31d9f46
 ^

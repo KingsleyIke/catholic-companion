@@ -58,6 +58,7 @@ class NewsFragment : Fragment() {
         newsRecyclerView.adapter
 
         //Todo on use of real data make recycler view cardview bigger and use separate adapters
+        //Todo override enter for search and remove entering to next line
         return root
     }
 

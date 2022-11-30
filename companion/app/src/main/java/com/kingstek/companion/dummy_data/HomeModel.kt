@@ -1,6 +1,6 @@
-package com.kingstek.companion.ui.home
+package com.kingstek.companion.dummy_data
 
-class HomeModel(
+data class HomeModel(
     val homeText: String,
     val homeDetails: String,
     val homeImage: Int
