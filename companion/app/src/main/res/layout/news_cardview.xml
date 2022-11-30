@@ -71,6 +71,7 @@
                 android:textColor="@color/main_color_dark"
                 android:layout_marginStart="3dp"
                 android:layout_marginEnd="3dp"
+                android:lines="2"
                 android:text="This is a demo news Headline - Something is going to happpen"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/materialCardView"

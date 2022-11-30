@@ -18,7 +18,7 @@
         android:weightSum="2"/>
 
     <TextView
-        android:id="@+id/textHome"
+        android:id="@+id/text_Home_news"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:background="@color/gray"
@@ -38,7 +38,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textHome">
+        app:layout_constraintTop_toBottomOf="@+id/text_Home_news">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/news_recycler_view"

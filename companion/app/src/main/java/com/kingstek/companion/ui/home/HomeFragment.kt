@@ -1,16 +1,22 @@
 package com.kingstek.companion.ui.home
 
+import android.R
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.AdapterView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.kingstek.companion.databinding.FragmentHomeBinding
+
 
 class HomeFragment : Fragment() {
 
@@ -29,15 +35,30 @@ class HomeFragment : Fragment() {
     _binding = FragmentHomeBinding.inflate(inflater, container, false)
     val root: View = binding.root
 
-    val textView: TextView = binding.textHome
+//    val textView: TextView =
     homeViewModel.text.observe(viewLifecycleOwner, Observer {
-      textView.text = it
+      binding.textHomeNews.text = it
     })
+
+    binding.textHomeNews.setOnClickListener{
+      it.findNavController().navigate(com.kingstek.companion.R.id.nav_news)
+//      Navigation.findNavController(it).navigate(R.id.nav_news)
+//      Navigation.findNavController(it).navigate(R.id.action_nav_home_to_nav_news)
+    }
 
     val newsRecyclerView = binding.newsRecyclerView
     val homeRecyclerView = binding.homeRecyclerView
 
-    val newsAdapter = NewsAdapter(homeViewModel.newsList)
+    val newsAdapter = NewsAdapter(homeViewModel.newsList, object : onItemClickListener {
+      override fun onItemClicked(position: Int, view: View) {
+//        Toast.makeText(context, ""+position, Toast.LENGTH_SHORT).show()
+
+        val action = HomeFragmentDirections.actionNavHomeToNewsDetailsFragment(position)
+        Navigation.findNavController(view).navigate(action)
+
+      }
+
+    })
     val homeAdapter = HomeAdapter(homeViewModel.homeList)
 
     newsRecyclerView.adapter = newsAdapter
