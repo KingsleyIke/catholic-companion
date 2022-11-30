@@ -18,21 +18,18 @@ private var _binding: FragmentParishBinding? = null
   // onDestroyView.
   private val binding get() = _binding!!
 
-  override fun onCreateView(
-    inflater: LayoutInflater,
-    container: ViewGroup?,
-    savedInstanceState: Bundle?
-  ): View? {
-    parishViewModel =
-            ViewModelProvider(this).get(ParishViewModel::class.java)
-
+  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
     _binding = FragmentParishBinding.inflate(inflater, container, false)
     val root: View = binding.root
+
+    parishViewModel =
+            ViewModelProvider(this).get(ParishViewModel::class.java)
 
     val textView: TextView = binding.textGallery
     parishViewModel.text.observe(viewLifecycleOwner, Observer {
       textView.text = it
     })
+
     return root
   }
 
