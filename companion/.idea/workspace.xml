@@ -10,7 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6290f196-b7f4-49a6-94e9-5240f145db12" name="Default Changelist" comment="Parish fragment update">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/parish/ParishDetailsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/parish/ParishDetailsFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/home/HomeAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/home/HomeAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/home/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/home/HomeFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/home/NewsAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/home/NewsAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670052558795</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fix parish details crash error">
+      <created>1670075607214</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1670075607214</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -187,7 +198,8 @@
     <MESSAGE value="Update parish viewmodel with base" />
     <MESSAGE value="Parish search and filter buttons" />
     <MESSAGE value="Parish fragment update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Parish fragment update" />
+    <MESSAGE value="Fix parish details crash error" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix parish details crash error" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
