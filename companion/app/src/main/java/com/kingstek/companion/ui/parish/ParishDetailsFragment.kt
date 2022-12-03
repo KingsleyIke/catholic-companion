@@ -45,67 +45,75 @@ class ParishDetailsFragment : Fragment() {
 //        binding.ltSundayMass.addView(view)
 
         //set sunday masses with values fro parish  list
-        for (i in sundayMassList!!.indices) {
-            val view: View = View.inflate(context, R.layout.mass_cardview, null)
-            val massText: TextView =  view.findViewById<TextView>(R.id.tv_mass_text)
-            massText.text = sundayMassList[i]
-            binding.ltSundayMass.addView(view)
+        if (sundayMassList != null) {
+            for (i in sundayMassList.indices) {
+                val view: View = View.inflate(context, R.layout.mass_cardview, null)
+                val massText: TextView =  view.findViewById<TextView>(R.id.tv_mass_text)
+                massText.text = sundayMassList[i]
+                binding.ltSundayMass.addView(view)
+            }
         }
 
         //set weeekday masses with values fro parish  list
-        for (i in weekdayMassList!!.indices) {
-            val view: View = View.inflate(context, R.layout.mass_cardview, null)
-            val massText: TextView =  view.findViewById<TextView>(R.id.tv_mass_text)
-            massText.text = weekdayMassList[i].day + " " + weekdayMassList[i].time
-            binding.ltWeekdayMass.addView(view)
+        if (weekdayMassList != null) {
+            for (i in weekdayMassList.indices) {
+                val view: View = View.inflate(context, R.layout.mass_cardview, null)
+                val massText: TextView =  view.findViewById<TextView>(R.id.tv_mass_text)
+                massText.text = weekdayMassList[i].day + " " + weekdayMassList[i].time
+                binding.ltWeekdayMass.addView(view)
+            }
         }
 
-        //todo fix random crashing issue on load of weekday mass view
-
         //set pastoral team with values fro parish  list
-        for (i in pastoralTeamList!!.indices) {
-            val view: View = View.inflate(context, R.layout.pastoral_cardview, null)
-            val positionText: TextView =  view.findViewById<TextView>(R.id.tv_team_member_position)
-            val nameText: TextView =  view.findViewById<TextView>(R.id.tv_team_member_name)
-            val numberText: TextView =  view.findViewById<TextView>(R.id.tv_team_member_number)
-            positionText.text = pastoralTeamList[i].postion
-            nameText.text = pastoralTeamList[i].name
-            numberText.text = pastoralTeamList[i].phoneNumber
-            binding.ltPastoralTeam.addView(view)
+        if (pastoralTeamList != null) {
+            for (i in pastoralTeamList.indices) {
+                val view: View = View.inflate(context, R.layout.pastoral_cardview, null)
+                val positionText: TextView =  view.findViewById<TextView>(R.id.tv_team_member_position)
+                val nameText: TextView =  view.findViewById<TextView>(R.id.tv_team_member_name)
+                val numberText: TextView =  view.findViewById<TextView>(R.id.tv_team_member_number)
+                positionText.text = pastoralTeamList[i].postion
+                nameText.text = pastoralTeamList[i].name
+                numberText.text = pastoralTeamList[i].phoneNumber
+                binding.ltPastoralTeam.addView(view)
+            }
         }
 
         //set activities with values from parish  list
-        for (i in activitiesList!!.indices) {
-            val view: View = View.inflate(context, R.layout.pastoral_cardview, null)
-            val positionText: TextView =  view.findViewById<TextView>(R.id.tv_team_member_position)
-            val nameText: TextView =  view.findViewById<TextView>(R.id.tv_team_member_name)
-            val numberText: TextView =  view.findViewById<TextView>(R.id.tv_team_member_number)
-            val lineSeperator: View = view.findViewById(R.id.line_seperator)
-            lineSeperator.visibility = View.GONE
-            numberText.visibility = View.GONE
-//            val numberText: TextView =  view.findViewById<TextView>(R.id.tv_team_member_number)
-            positionText.text = activitiesList[i].title
-            nameText.text = activitiesList[i].dayAndTime
-//            numberText.text = pastoralTeamList[i].phoneNumber
-            binding.ctActivities.addView(view)
-//            binding.ltSundayMass.removeView(view)
+        if (activitiesList != null) {
+            for (i in activitiesList.indices) {
+                val view: View = View.inflate(context, R.layout.pastoral_cardview, null)
+                val positionText: TextView =  view.findViewById<TextView>(R.id.tv_team_member_position)
+                val nameText: TextView =  view.findViewById<TextView>(R.id.tv_team_member_name)
+                val numberText: TextView =  view.findViewById<TextView>(R.id.tv_team_member_number)
+                val lineSeperator: View = view.findViewById(R.id.line_seperator)
+                lineSeperator.visibility = View.GONE
+                numberText.visibility = View.GONE
+    //            val numberText: TextView =  view.findViewById<TextView>(R.id.tv_team_member_number)
+                positionText.text = activitiesList[i].title
+                nameText.text = activitiesList[i].dayAndTime
+    //            numberText.text = pastoralTeamList[i].phoneNumber
+                binding.ctActivities.addView(view)
+    //            binding.ltSundayMass.removeView(view)
+            }
         }
 
         //set annoucement with values from parish  list
-        for (i in announcementList!!.indices) {
-            val view: View = View.inflate(context, R.layout.pastoral_cardview, null)
-            val positionText: TextView =  view.findViewById<TextView>(R.id.tv_team_member_position)
-            val nameText: TextView =  view.findViewById<TextView>(R.id.tv_team_member_name)
-            val numberText: TextView =  view.findViewById<TextView>(R.id.tv_team_member_number)
-            val lineSeperator: View = view.findViewById(R.id.line_seperator)
-            lineSeperator.visibility = View.GONE
-            numberText.visibility = View.GONE
-//            val numberText: TextView =  view.findViewById<TextView>(R.id.tv_team_member_number)
-            positionText.text = announcementList[i].title
-            nameText.text = announcementList[i].details
-//            numberText.text = pastoralTeamList[i].phoneNumber
-            binding.ctAnnouncement.addView(view)
-//            binding.ltSundayMass.removeView(view)
+        if (announcementList != null) {
+            for (i in announcementList.indices) {
+                val view: View = View.inflate(context, R.layout.pastoral_cardview, null)
+                val positionText: TextView =  view.findViewById<TextView>(R.id.tv_team_member_position)
+                val nameText: TextView =  view.findViewById<TextView>(R.id.tv_team_member_name)
+                val numberText: TextView =  view.findViewById<TextView>(R.id.tv_team_member_number)
+                val lineSeperator: View = view.findViewById(R.id.line_seperator)
+                lineSeperator.visibility = View.GONE
+                numberText.visibility = View.GONE
+    //            val numberText: TextView =  view.findViewById<TextView>(R.id.tv_team_member_number)
+                positionText.text = announcementList[i].title
+                nameText.text = announcementList[i].details
+    //            numberText.text = pastoralTeamList[i].phoneNumber
+                binding.ctAnnouncement.addView(view)
+    //            binding.ltSundayMass.removeView(view)
+            }
         }
 
         //Todo perform all loops asynchronously to reduce time
