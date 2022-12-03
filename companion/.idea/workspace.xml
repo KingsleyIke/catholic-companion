@@ -9,34 +9,38 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6290f196-b7f4-49a6-94e9-5240f145db12" name="Default Changelist" comment="Update parish viewmodel with base">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/dummy_data/Activities.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/dummy_data/Announcement.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/dummy_data/ParishModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/dummy_data/PastoralTeam.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/dummy_data/WeekMasses.kt" afterDir="false" />
+    <list default="true" id="6290f196-b7f4-49a6-94e9-5240f145db12" name="Default Changelist" comment="Parish search and filter buttons">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/parish/ParishAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/parish/ParishDetailsViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/backround_rounded_white.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/image_cyril.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/st_cyril.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/st_cyril_church.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/parish_cardview.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/dummy_data/Activities.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/dummy_data/Activities.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/dummy_data/Announcement.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/dummy_data/Announcement.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/dummy_data/DummyData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/dummy_data/DummyData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/dummy_data/HomeModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/dummy_data/HomeModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/dummy_data/NewsModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/dummy_data/NewsModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/dummy_data/ParishModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/dummy_data/ParishModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/dummy_data/PastoralTeam.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/dummy_data/PastoralTeam.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/dummy_data/WeekMasses.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/dummy_data/WeekMasses.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/BaseViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/BaseViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/home/HomeAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/home/HomeAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/home/HomeModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/dummy_data/HomeModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/home/HomeViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/home/HomeViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/home/NewsAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/home/NewsAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/home/NewsModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/dummy_data/NewsModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/news/NewsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/news/NewsFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/parish/ParishDetailsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/parish/ParishDetailsFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/parish/ParishFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/parish/ParishFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/backround_rounded_ox_bood.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/backround_rounded_ox_bood.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/parish/ParishViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/parish/ParishViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_parish.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_parish.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/news_cardview.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/news_cardview.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[192.168.0.117:5555]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[L79P7S798PS8OBWK]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -72,6 +76,7 @@
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
+    <property name="android-custom-view/Users/kingsleyokoye/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.2.1/f0f93e67af3f7417bdd560d5142f6dec4fe629c3/recyclerview-1.2.1-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED" value="RecyclerView" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
@@ -81,6 +86,7 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion" />
@@ -91,6 +97,9 @@
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="com.kingstek.companion.dummy_data" />
       <recent name="com.kingstek.companion.ui.news" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.kingstek.companion.ui.parish" />
     </key>
   </component>
   <component name="RunManager">
@@ -168,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669849151896</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Parish search and filter buttons">
+      <created>1669851592002</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669851592002</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -185,15 +201,26 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update parish viewmodel with base" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update parish viewmodel with base" />
+    <MESSAGE value="Parish search and filter buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Parish search and filter buttons" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/home/NewsAdapter.kt</url>
-          <line>19</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/parish/ParishFragment.kt</url>
+          <line>39</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/parish/ParishFragment.kt</url>
+          <line>55</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/parish/ParishViewModel.kt</url>
+          <line>17</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -16,9 +16,9 @@ class NewsAdapter(private val newsModel: MutableLiveData<List<NewsModel>>, priva
 //
 //    }
 
-    fun setOnclickListener(listner: onItemClickListener) {
-        mListner = listner
-    }
+//    fun setOnclickListener(listner: onItemClickListener) {
+//        mListner = listner
+//    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsAdapter.ViewHolder {
         val context = parent.context

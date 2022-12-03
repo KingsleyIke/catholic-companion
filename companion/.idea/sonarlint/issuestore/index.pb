@@ -15,7 +15,5 @@ _
 /app/src/main/res/drawable/ic_menu_slideshow.xml,c/3/c338d88ff1e72ff9e67d23f5de5c72ff811f625f
 Z
 *app/src/main/res/drawable/side_nav_bar.xml,8/b/8bced72a6668a3dd684c3e47f0553968df06271a
-Y
-)app/src/main/res/layout/activity_home.xml,8/4/84bbfd95b490b92591d2b037417f036942315d57
 x
 Happ/src/main/java/com/kingstek/companion/ui/calender/CalenderFragment.kt,3/2/32d227a6c0fc374b89b95b1d9f82b38b400b5afb
