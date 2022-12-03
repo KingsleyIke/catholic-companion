@@ -12,14 +12,6 @@ import com.kingstek.companion.dummy_data.NewsModel
 
 class NewsAdapter(private val newsModel: MutableLiveData<List<NewsModel>>, private var mListner: onItemClickListener) : RecyclerView.Adapter<NewsAdapter.ViewHolder> () {
 
-//    interface onItemClickListener{
-//
-//    }
-
-//    fun setOnclickListener(listner: onItemClickListener) {
-//        mListner = listner
-//    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsAdapter.ViewHolder {
         val context = parent.context
         val inflater = LayoutInflater.from(context)
