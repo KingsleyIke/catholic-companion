@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@id/nav_home">
 
     <fragment
         android:id="@+id/nav_home"
@@ -16,13 +16,20 @@
         <action
             android:id="@+id/action_nav_home_to_newsDetailsFragment"
             app:destination="@id/newsDetailsFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_parish"
+            app:destination="@id/nav_parish" />
     </fragment>
 
     <fragment
         android:id="@+id/nav_parish"
         android:name="com.kingstek.companion.ui.parish.ParishFragment"
         android:label="@string/menu_parish"
-        tools:layout="@layout/fragment_parish" />
+        tools:layout="@layout/fragment_parish" >
+        <action
+            android:id="@+id/action_nav_parish_to_parishDetailsFragment"
+            app:destination="@id/parishDetailsFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_news"
@@ -61,6 +68,14 @@
         android:id="@+id/newsDetailsFragment"
         android:name="com.kingstek.companion.ui.news.NewsDetailsFragment"
         android:label="NewsDetailsFragment" >
+        <argument
+            android:name="position"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/parishDetailsFragment"
+        android:name="com.kingstek.companion.ui.parish.ParishDetailsFragment"
+        android:label="ParishDetailsFragment" >
         <argument
             android:name="position"
             app:argType="integer" />

@@ -10,9 +10,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kingstek.companion.databinding.FragmentParishBinding
 import com.kingstek.companion.ui.home.onItemClickListener
+import com.kingstek.companion.ui.news.NewsFragmentDirections
 
 class ParishFragment : Fragment() {
 
@@ -38,7 +40,9 @@ private var _binding: FragmentParishBinding? = null
           override fun onItemClicked(position: Int, view: View) {
               parishViewModel.sortVisiblity.observe(viewLifecycleOwner, Observer {
                   if (it) {
-                      Toast.makeText(context, ""+position, Toast.LENGTH_SHORT).show()
+//                      Toast.makeText(context, ""+position, Toast.LENGTH_SHORT).show()
+                      val action = ParishFragmentDirections.actionNavParishToParishDetailsFragment(position)
+                      Navigation.findNavController(view).navigate(action)
                   } else{
                       Log.d("Do noth", "Do nothing")
                   }
