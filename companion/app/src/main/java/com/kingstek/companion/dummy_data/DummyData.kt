@@ -156,8 +156,8 @@ class DummyData {
     )
 
     private val p1: ParishModel = ParishModel(
-        "St Cyril Catholic Church Okota",
-        "Okota, Lagos State, Lagos, Nigeria",
+        "Christ the king",
+        "Okota State",
         "Festac Deanary",
         "Lagos Archdioces",
         parishImage,
