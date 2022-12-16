@@ -13,6 +13,7 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -45,6 +46,7 @@ class MapsFragment : Fragment() {
     /**
      * TODO Remove unused implemtations fro adding markers to other locations
      * TODO Tweak code to add markers for churches nearby
+     * TODO add viewmodel and change to view binding
      */
 
     private var map: GoogleMap? = null
@@ -96,6 +98,8 @@ class MapsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
+
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = "Parish Near You"
 
         if (savedInstanceState != null) {
             lastKnownLocation = savedInstanceState.getParcelable(KEY_LOCATION)
