@@ -4,5 +4,4 @@ import com.kingstek.companion.ui.BaseViewModel
 
 class ParishDetailsViewModel : BaseViewModel() {
 
-
 }

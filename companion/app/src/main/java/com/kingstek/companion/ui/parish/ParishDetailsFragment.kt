@@ -33,16 +33,19 @@ class ParishDetailsFragment : Fragment() {
 
         (requireActivity() as AppCompatActivity).supportActionBar?.title = parishDetailsViewModel.parishList.value?.get(position)?.parishName
 
+        val parishList = parishDetailsViewModel.parishList.value?.get(position)
 
-        val sundayMassList = parishDetailsViewModel.parishList.value?.get(position)?.sundayMas
-        val weekdayMassList = parishDetailsViewModel.parishList.value?.get(position)?.weekDayMass
-        val pastoralTeamList = parishDetailsViewModel.parishList.value?.get(position)?.pastoralTeam
-        val announcementList = parishDetailsViewModel.parishList.value?.get(position)?.churchAnnouncements
-        val activitiesList = parishDetailsViewModel.parishList.value?.get(position)?.churchActivities
-
+        val sundayMassList = parishList?.sundayMas
+        val weekdayMassList = parishList?.weekDayMass
+        val pastoralTeamList = parishList?.pastoralTeam
+        val announcementList = parishList?.churchAnnouncements
+        val activitiesList = parishList?.churchActivities
 
 //        text.text = sundayMassList!![1]
 //        binding.ltSundayMass.addView(view)
+
+        binding.tvParishName.text = parishList?.parishName
+        binding.tvParishAddress.text = parishList?.address + ", " + parishList?.deanery + ", " + parishList?.diocese
 
         //set sunday masses with values fro parish  list
         if (sundayMassList != null) {
