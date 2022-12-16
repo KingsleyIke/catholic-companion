@@ -42,6 +42,11 @@ import com.kingstek.companion.utils.Constants.TAG
 
 class MapsFragment : Fragment() {
 
+    /**
+     * TODO Remove unused implemtations fro adding markers to other locations
+     * TODO Tweak code to add markers for churches nearby
+     */
+
     private var map: GoogleMap? = null
     private var cameraPosition: CameraPosition? = null
 
