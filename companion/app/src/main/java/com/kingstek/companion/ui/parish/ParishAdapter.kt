@@ -9,7 +9,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.kingstek.companion.R
 import com.kingstek.companion.dummy_data.ParishModel
-import com.kingstek.companion.ui.home.onItemClickListener
+import com.kingstek.companion.onItemClickListener
 
 class ParishAdapter(private val parishModel: MutableLiveData<List<ParishModel>>, private var mListner: onItemClickListener) : RecyclerView.Adapter<ParishAdapter.ViewHolder> () {
 

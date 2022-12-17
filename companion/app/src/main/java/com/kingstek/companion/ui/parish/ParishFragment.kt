@@ -5,16 +5,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kingstek.companion.databinding.FragmentParishBinding
-import com.kingstek.companion.ui.home.onItemClickListener
-import com.kingstek.companion.ui.news.NewsFragmentDirections
+import com.kingstek.companion.onItemClickListener
 
 class ParishFragment : Fragment() {
 

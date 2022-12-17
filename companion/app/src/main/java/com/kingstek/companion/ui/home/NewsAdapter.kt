@@ -9,6 +9,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.kingstek.companion.R
 import com.kingstek.companion.dummy_data.NewsModel
+import com.kingstek.companion.onItemClickListener
 
 class NewsAdapter(private val newsModel: MutableLiveData<List<NewsModel>>, private var mListner: onItemClickListener) : RecyclerView.Adapter<NewsAdapter.ViewHolder> () {
 

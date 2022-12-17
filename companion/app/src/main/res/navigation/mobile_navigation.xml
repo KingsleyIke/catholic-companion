@@ -79,10 +79,22 @@
         <argument
             android:name="position"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_parishDetailsFragment_to_parishGalleryFragment"
+            app:destination="@id/parishGalleryFragment" />
     </fragment>
     <fragment
         android:id="@+id/mapsFragment"
         android:name="com.kingstek.companion.ui.location.MapsFragment"
         android:label="fragment_maps"
         tools:layout="@layout/fragment_maps" />
+    <fragment
+        android:id="@+id/parishGalleryFragment"
+        android:name="com.kingstek.companion.ui.parish.ParishGalleryFragment"
+        android:label="fragment_parish_gallery"
+        tools:layout="@layout/fragment_parish_gallery" >
+        <argument
+            android:name="position"
+            app:argType="integer" />
+    </fragment>
 </navigation>

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kingstek.companion.R
 import com.kingstek.companion.databinding.FragmentHomeBinding
+import com.kingstek.companion.onItemClickListener
 
 
 class HomeFragment : Fragment() {
