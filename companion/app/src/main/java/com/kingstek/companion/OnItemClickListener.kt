@@ -1,4 +1,4 @@
-package com.kingstek.companion.ui.home
+package com.kingstek.companion
 
 import android.view.View
 

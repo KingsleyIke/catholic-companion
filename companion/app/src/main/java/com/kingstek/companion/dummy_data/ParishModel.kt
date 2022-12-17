@@ -11,5 +11,6 @@ data class ParishModel(
     val weekDayMass: List<WeekMasses>?,
     val pastoralTeam: List<PastoralTeam>?,
     val churchActivities: List<Activities>?,
-    val churchAnnouncements: List<Announcement>?
+    val churchAnnouncements: List<Announcement>?,
+    val parishGalerry: List<ParishGalleryModel>?
     )

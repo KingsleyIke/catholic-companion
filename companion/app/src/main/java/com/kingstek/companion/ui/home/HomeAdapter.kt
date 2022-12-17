@@ -9,6 +9,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.kingstek.companion.R
 import com.kingstek.companion.dummy_data.HomeModel
+import com.kingstek.companion.onItemClickListener
 
 class HomeAdapter(private val homeModel: MutableLiveData<List<HomeModel>>, private var mListener: onItemClickListener) : RecyclerView.Adapter<HomeAdapter.ViewHolder> () {
 

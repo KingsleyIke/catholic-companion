@@ -154,6 +154,37 @@ class DummyData {
             Date(20122022)
         )
     )
+    private val evenImages1 = EvenImages("", R.drawable.image_cyril)
+    private val evenImages2 = EvenImages("", R.drawable.st_cyril)
+    private val evenImages3 = EvenImages("", R.drawable.st_cyril_church)
+    private val evenImages4 = EvenImages("", R.drawable.holy_cross_cathedral)
+    private val evenImages5 = EvenImages("", R.drawable.rosary_bible)
+
+    private val eventImages: ArrayList<EvenImages> = arrayListOf (
+        evenImages3,
+        evenImages1,
+        evenImages2,
+        evenImages3,
+        evenImages4,
+        evenImages5)
+
+    private val gallery1 = ParishGalleryModel(
+        " Feast of Christ the king",
+        "2022",
+    "Holds every last sunday of the curhees calendar year",
+        "Holds every last sunday of the curhees calendar year in commemoration of Jesus Christ as King of the Universe calendar year in commemoration of Jesus Christ as King of the Universe calendar year in commemoration of Jesus Christ as King of the Universe calendar year in commemoration of Jesus Christ as King of the Universe calendar year in commemoration of Jesus Christ as King of the Universe ",
+        eventImages,
+        Date(20122022)
+    )
+
+    private val gallery2 = ParishGalleryModel(
+        "Harvest of Divine favour 2022",
+        "2022",
+        "Holds every year in thanksgiving",
+        "Holds every last sunday of the curhees calendar year in commemoration of Jesus Christ as King of the Universe calendar year in commemoration of Jesus Christ as King of the Universe calendar year in commemoration of Jesus Christ as King of the Universe calendar year in commemoration of Jesus Christ as King of the Universe calendar year in commemoration of Jesus Christ as King of the Universe ",
+        eventImages,
+        Date(20122022)
+    )
 
     private val p1: ParishModel = ParishModel(
         "Christ the king",
@@ -165,7 +196,8 @@ class DummyData {
         weekdayMass,
         pastoralTeam,
         churchActivities,
-        announcement
+        announcement,
+        arrayListOf(gallery1, gallery2)
     )
 
     private val p2: ParishModel = ParishModel(
@@ -178,7 +210,8 @@ class DummyData {
         null,
         pastoralTeam,
         churchActivities,
-        announcement
+        announcement,
+        arrayListOf(gallery1, gallery2, gallery1, gallery2, gallery1, gallery2)
     )
 
     val homeList: ArrayList<HomeModel> = arrayListOf(

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="8dp"
+    android:paddingEnd="5dp"
+    tools:context=".ui.parish.ParishGalleryFragment">
+
+
+    <TextView
+        android:id="@+id/tv_parish_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Church Name"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/main_color_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/line_seperator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="3dp"
+        android:textSize="12sp"
+        android:background="@color/main_color_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_parish_name"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_gallery_recycler_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_parish_name" />
+
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/lt_daily_calender_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        app:cardCornerRadius="10dp"
+        android:backgroundTint="@color/sub_color_semi_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/daily_text_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="11sp"
+                android:textColor="@color/main_color_dark"
+                android:text="Sat 20th Nov, 2022  - Feast day, memorial, holiday of obligation"
+                />
+
+            <TextView
+                android:id="@+id/daily_text_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/main_color_dark"
+                android:textStyle="bold"
+                android:text="St Maria Gorathy, virgin and Matry"
+                />
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.kingstek.companion.R
 import com.kingstek.companion.databinding.FragmentParishDetailsBinding
@@ -118,6 +119,12 @@ class ParishDetailsFragment : Fragment() {
     //            binding.ltSundayMass.removeView(view)
             }
         }
+
+        binding.ctParishGallery.setOnClickListener{
+            val action = ParishDetailsFragmentDirections.actionParishDetailsFragmentToParishGalleryFragment(position)
+            Navigation.findNavController(it).navigate(action)
+        }
+
 
         //Todo perform all loops asynchronously to reduce time
 
