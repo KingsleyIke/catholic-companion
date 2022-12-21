@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.kingstek.companion.R
 import com.kingstek.companion.databinding.FragmentParishDetailsBinding
@@ -120,16 +121,23 @@ class ParishDetailsFragment : Fragment() {
             }
         }
 
+        //Todo perform all loops asynchronously to reduce time
+
+        //todo Display no data when List is empty for all text
+
         binding.ctParishGallery.setOnClickListener{
             val action = ParishDetailsFragmentDirections.actionParishDetailsFragmentToParishGalleryFragment(position)
             Navigation.findNavController(it).navigate(action)
         }
 
-
-        //Todo perform all loops asynchronously to reduce time
-
-        //todo Display no data when List is empty for all text
+        binding.tvUpdateParishInfo.setOnClickListener{
+            it.findNavController().navigate(R.id.updateParishInfoFragment)
+        }
         return root
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
