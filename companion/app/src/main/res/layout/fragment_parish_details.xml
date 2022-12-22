@@ -273,6 +273,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/backround_rounded_light_color"
+                android:visibility="gone"
                 android:padding="5dp"
                 android:orientation="vertical"
                 app:layout_constraintTop_toBottomOf="@id/ct_announcement">
@@ -304,6 +305,18 @@
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
+            <TextView
+                android:id="@+id/tv_update_parish_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Update Info"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:background="@drawable/backround_rounded_light_color"
+                app:layout_constraintTop_toBottomOf="@id/ct_announcement"
+                />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/ct_parish_gallery"
@@ -313,7 +326,7 @@
                 android:background="@drawable/backround_rounded_ox_bood"
                 android:padding="5dp"
                 android:orientation="vertical"
-                app:layout_constraintTop_toBottomOf="@id/ct_contributor">
+                app:layout_constraintTop_toBottomOf="@id/tv_update_parish_info">
 
                 <TextView
                     android:id="@+id/tv_picture_gallery_heading"
