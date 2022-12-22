@@ -1,6 +1,4 @@
 
-r
-Bapp/src/main/java/com/kingstek/companion/ui/admin/AdminFragment.kt,f/d/fd3136457fc659e7a427c042404b88ec0a55c055
 \
 ,app/src/main/res/drawable/ic_menu_camera.xml,8/f/8fb1bba82dfebdca0d154dbdeaccac47fb6f744d
 ]
@@ -29,14 +27,8 @@ q
 Aapp/src/main/java/com/kingstek/companion/dummy_data/Activities.kt,4/c/4c9be698bc312ed9544151c4145ba12775bb1653
 ?
 settings.gradle,0/5/05efc8b1657769a27696d478ded1e95f38737233
-<
-build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
-@
-app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
 P
  app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
-t
-Dapp/src/main/java/com/kingstek/companion/ui/location/MapsFragment.kt,7/8/78f37da3f5cc1104c87560fc72d4c354ece08fff
 |
 Lapp/src/main/java/com/kingstek/companion/ui/parish/ParishDetailsViewModel.kt,3/c/3cc0a0e4b700ce74a5fdbf52e54d0b1cd6dce0ce
 s
