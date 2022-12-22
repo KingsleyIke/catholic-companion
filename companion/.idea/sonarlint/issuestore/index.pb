@@ -9,8 +9,6 @@ _
 /app/src/main/res/drawable/ic_menu_slideshow.xml,c/3/c338d88ff1e72ff9e67d23f5de5c72ff811f625f
 Z
 *app/src/main/res/drawable/side_nav_bar.xml,8/b/8bced72a6668a3dd684c3e47f0553968df06271a
-x
-Happ/src/main/java/com/kingstek/companion/ui/calender/CalenderFragment.kt,3/2/32d227a6c0fc374b89b95b1d9f82b38b400b5afb
 h
 8app/src/main/java/com/kingstek/companion/HomeActivity.kt,4/0/40e7a307f9bf44f0e84c72c00d67c837e272d0f5
 q
@@ -43,3 +41,9 @@ Dapp/src/main/java/com/kingstek/companion/ui/location/MapsFragment.kt,7/8/78f37
 Lapp/src/main/java/com/kingstek/companion/ui/parish/ParishDetailsViewModel.kt,3/c/3cc0a0e4b700ce74a5fdbf52e54d0b1cd6dce0ce
 s
 Capp/src/main/java/com/kingstek/companion/dummy_data/Announcement.kt,8/d/8df591e1ca46edd57db466dc1804b9be2cced6d0
+|
+Lapp/src/main/java/com/kingstek/companion/ui/parish/ParishGalleryViewModel.kt,3/4/34c8bcb6d590158f29132afbd415af0166fda236
+p
+@app/src/main/java/com/kingstek/companion/dummy_data/DummyData.kt,4/1/418dc5bf3398e46ecda44cf63c3a8429990ef8d3
+{
+Kapp/src/main/java/com/kingstek/companion/ui/parish/ParishGalleryFragment.kt,5/2/5235f2731fac1a458bd14d84ce4ff846504f34a1
