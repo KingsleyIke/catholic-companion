@@ -9,15 +9,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6290f196-b7f4-49a6-94e9-5240f145db12" name="Default Changelist" comment="Parish info update ui">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/calender/MonthlyViewFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_sliding_monthly.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="6290f196-b7f4-49a6-94e9-5240f145db12" name="Default Changelist" comment="Parish gallery implementation">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/calender/CalenderFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/calender/CalenderFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/calender/FeastDayFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/calender/SlidingMonthlyFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/calender/FeastDetailFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/calender/FeastDetailFragment.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +30,7 @@
         <option value="Kotlin Interface" />
         <option value="Kotlin Data Class" />
         <option value="Kotlin Class" />
+        <option value="valueResourceFile" />
       </list>
     </option>
   </component>
@@ -72,6 +67,7 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion" />
@@ -184,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670075607214</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Parish gallery implementation">
+      <created>1671308662696</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1671308662696</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -205,8 +208,8 @@
     <MESSAGE value="Parish fragment update" />
     <MESSAGE value="Fix parish details crash error" />
     <MESSAGE value="Parish gallery implementation" />
-    <MESSAGE value="Parish info update ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="Parish info update ui" />
+    <MESSAGE value="Update parish info" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update parish info" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
