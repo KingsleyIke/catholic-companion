@@ -20,6 +20,7 @@ class MonthlyViewFragment : Fragment() {
         val root: View = binding.root
 
 
+        //TODO use hashmap to store date and text
 
         return root    }
 
