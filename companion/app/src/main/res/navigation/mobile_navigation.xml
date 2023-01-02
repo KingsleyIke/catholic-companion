@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/nav_home">
+    app:startDestination="@id/monthlyViewFragment">
 
     <fragment
         android:id="@+id/nav_home"
@@ -118,8 +118,8 @@
     <fragment
         android:id="@+id/monthlyViewFragment"
         android:name="com.kingstek.companion.ui.calender.MonthlyViewFragment"
-        android:label="fragment_sliding_monthly"
-        tools:layout="@layout/fragment_sliding_monthly" >
+        android:label="fragment_monthly_view"
+        tools:layout="@layout/fragment_monthly_view" >
         <action
             android:id="@+id/action_monthlyViewFragment_to_feastDetailFragment"
             app:destination="@id/feastDetailFragment" />
@@ -138,9 +138,6 @@
     <fragment
         android:id="@+id/slidingMonthlyFragment"
         android:name="com.kingstek.companion.ui.calender.SlidingMonthlyFragment"
-        android:label="FeastDayFragment" >
-        <action
-            android:id="@+id/action_slidingMonthlyFragment_feastDayFragment_to_feastDetailFragment"
-            app:destination="@id/feastDetailFragment" />
-    </fragment>
+        android:label="FeastDayFragment"
+        tools:layout="@layout/fragment_sliding_monthly" />
 </navigation>

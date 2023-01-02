@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.kingstek.companion.R
 import com.kingstek.companion.databinding.FragmentCalenderBinding
@@ -16,13 +17,15 @@ class CalenderFragment : Fragment() {
 
     private var _binding: FragmentCalenderBinding? = null
     private val binding get() = _binding!!
+    private lateinit var calendarViewModel: CalendarViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentCalenderBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        calendarViewModel = ViewModelProvider(this).get(CalendarViewModel::class.java)
 
-
+        //TODO animation on change of year
         return root
     }
 
