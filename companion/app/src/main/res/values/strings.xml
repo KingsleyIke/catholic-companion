@@ -34,4 +34,6 @@
     <string name="update">Update</string>
     <string name="select_category">Select Category </string>
     <string name="select_parish">Select Parish </string>
+    <string name="previous_year">Previous Year</string>
+    <string name="next_year">Next Year</string>
 </resources>

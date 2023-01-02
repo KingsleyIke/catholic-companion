@@ -15,8 +15,6 @@ q
 Aapp/src/main/java/com/kingstek/companion/ui/home/HomeViewModel.kt,c/6/c6b03bac75f8e3f3ded5ba4c233dd57e8c720ef7
 u
 Eapp/src/main/java/com/kingstek/companion/ui/parish/ParishViewModel.kt,d/1/d14908962cb69e765102e99355929d3d8e1ba43e
-w
-Gapp/src/main/java/com/kingstek/companion/ui/news/NewsDetailsFragment.kt,c/1/c1844c124ddaca5fafb03c3e9e10d0a026778a05
 A
 gradle.properties,2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4
 X
@@ -25,8 +23,6 @@ F
 app/proguard-rules.pro,9/e/9e08934d811afe28fbc77aaa3c0d747b94348db9
 q
 Aapp/src/main/java/com/kingstek/companion/dummy_data/Activities.kt,4/c/4c9be698bc312ed9544151c4145ba12775bb1653
-?
-settings.gradle,0/5/05efc8b1657769a27696d478ded1e95f38737233
 P
  app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 |

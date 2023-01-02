@@ -25,6 +25,7 @@ class CalenderFragment : Fragment() {
 
         calendarViewModel = ViewModelProvider(this).get(CalendarViewModel::class.java)
 
+        //TODO animation on change of year
         return root
     }
 
