@@ -9,17 +9,23 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6290f196-b7f4-49a6-94e9-5240f145db12" name="Default Changelist" comment="Add calendar view with text">
+    <list default="true" id="6290f196-b7f4-49a6-94e9-5240f145db12" name="Default Changelist" comment="Add feast day details">
+      <change afterPath="$PROJECT_DIR$/app/google-services.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/authentication/LogInFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/authentication/LogInViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/authentication/SingUpFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion/ui/authentication/SingUpViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_log_in.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_sing_up.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_feast_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_feast_detail.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[L79P7S798PS8OBWK]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/kingsleyokoye/.android/avd/Nexus_5_API_30.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -72,6 +78,7 @@
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/src/main/java/com/kingstek/companion" />
     </key>
     <key name="CreateKotlinClassDialog.RecentsKey">
@@ -224,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672699496490</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add feast day details">
+      <created>1672770109116</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1672770109116</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -251,7 +265,8 @@
     <MESSAGE value="Add calendar cardview" />
     <MESSAGE value="Add calendar Ui and viewmodel class" />
     <MESSAGE value="Add calendar view with text" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add calendar view with text" />
+    <MESSAGE value="Add feast day details" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add feast day details" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

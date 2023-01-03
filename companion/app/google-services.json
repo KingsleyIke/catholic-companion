@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "773744667543",
+    "project_id": "mycatholiccompanion",
+    "storage_bucket": "mycatholiccompanion.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:773744667543:android:16b411d1883153b04af2d2",
+        "android_client_info": {
+          "package_name": "com.kingstek.companion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "773744667543-7k462349m9tksj8fmqft9rjptgv6sol0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA20bD2_368y9vRvdXcUBC8ColcSP2Kw6w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "773744667543-7k462349m9tksj8fmqft9rjptgv6sol0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
