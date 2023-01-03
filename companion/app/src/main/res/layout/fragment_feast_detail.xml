@@ -1,14 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FeastDetailFragment">
+    android:padding="10dp">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/tv_previous_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Previous Day"
+        android:textColor="@color/main_color_dark"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:drawableLeftCompat="@drawable/ic_baseline_keyboard_arrow_left_24" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tv_next_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="10dp"
+        android:text="Next Day"
+        android:textColor="@color/main_color_dark"
+        android:textStyle="bold"
+        app:drawableRightCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_previous_day">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/day_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ordinary Time: January 7th"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/main_color_dark"/>
+
+            <TextView
+                android:id="@+id/day_sub_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saturday of the Thirty-Fourth Week in Ordinary Time"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/main_color_dark"
+                />
+
+            <TextView
+                android:id="@+id/day_small_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other Commemorations: St. Sylvester, abbot (RM); St. Leonard of Port Maurice, priest (RM)"
+                android:textSize="12sp"
+                android:textColor="@color/main_color_dark"
+                />
+
+            <View
+                android:id="@+id/line_seperatore_one"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/main_color_dark"
+                />
+
+            <TextView
+                android:id="@+id/first_reading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="First reading, Deut 28:20-27"
+                android:textSize="12sp"
+                android:textColor="@color/main_color_dark"
+                />
+
+            <TextView
+                android:id="@+id/second_reading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="First reading, Deut 28:20-27"
+                android:textSize="12sp"
+                android:textColor="@color/main_color_dark"
+                />
+
+            <TextView
+                android:id="@+id/psalm_reading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="First reading, Deut 28:20-27"
+                android:textSize="12sp"
+                android:textColor="@color/main_color_dark"/>
+
+            <TextView
+                android:id="@+id/gospel_reading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="First reading, Deut 28:20-27"
+                android:textSize="12sp"
+                android:textColor="@color/main_color_dark"/>
+
+            <View
+                android:id="@+id/line_seperatore_two"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/main_color_dark"
+                />
+
+            <TextView
+                android:id="@+id/go_to_readings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Go to Readings"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/main_color_dark"/>
+
+            <View
+                android:id="@+id/line_seperatore_three"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/main_color_dark"
+                />
+
+            <TextView
+                android:id="@+id/tv_body_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="5sp"
+                android:text="Taoday is the last day of the current Liturgical Year, and the last day of Ordinary Time until after Christmas. \n \n The Roman Martyrology includes in commemoration:
+
+\n \n—St. Sylvester, Abbot (1177-1267). He was the son of a lawyer and had also studied law before becoming a canon in his native town of Osimo. He was a zealous and fervent priest. His determination to retire into solitude was caused by the sight of the decomposing corpse of a friend. He at first lived as a hermit at Grotta Fucile, and then on Monte Fano where followers came to join him. He gave them the habit and Rule of St. Benedict together with certain other customs which reflect his own aspirations and the devotional tendencies of his day. He died in 1267 at the age of ninety.
+
+\n \n—St. Leonard of Port Maurice, priest (1676-1751). St. Leonard was a confessor, missionary and ascetic writer. He was part of the Riformella, a branch of the Franciscans, and spent his life giving missions in Tuscany, Central and Southern Italy, and Corsica. He advocated in particular, the devotion of the Way of the Cross, and erected the celebrated stations in the Colosseum. His writings are numerous, consisting of sermons, letters, ascetic treatises, and books of devotion. —New Catholic Dictionary
+"
+                android:textSize="12sp"
+                android:textColor="@color/main_color_dark"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

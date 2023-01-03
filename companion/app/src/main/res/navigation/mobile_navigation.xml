@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/updateParishInfoFragment">
+    app:startDestination="@id/nav_home">
 
     <fragment
         android:id="@+id/nav_home"
@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_nav_home_to_mapsFragment"
             app:destination="@id/mapsFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_calender"
+            app:destination="@id/nav_calender" />
     </fragment>
 
     <fragment
@@ -48,7 +51,11 @@
         android:id="@+id/nav_calender"
         android:name="com.kingstek.companion.ui.calender.CalenderFragment"
         android:label="@string/menu_calender"
-        tools:layout="@layout/fragment_calender" />
+        tools:layout="@layout/fragment_calender" >
+        <action
+            android:id="@+id/action_nav_calender_to_monthlyViewFragment"
+            app:destination="@id/monthlyViewFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_readings"
@@ -108,4 +115,29 @@
         android:name="com.kingstek.companion.ui.parish.UpdateParishInfoFragment"
         android:label="fragment_update_parish_info"
         tools:layout="@layout/fragment_update_parish_info" />
+    <fragment
+        android:id="@+id/monthlyViewFragment"
+        android:name="com.kingstek.companion.ui.calender.MonthlyViewFragment"
+        android:label="fragment_monthly_view"
+        tools:layout="@layout/fragment_monthly_view" >
+        <action
+            android:id="@+id/action_monthlyViewFragment_to_feastDetailFragment"
+            app:destination="@id/feastDetailFragment" />
+        <action
+            android:id="@+id/action_monthlyViewFragment_to_feastDayFragment"
+            app:destination="@id/slidingMonthlyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/feastDetailFragment"
+        android:name="com.kingstek.companion.ui.calender.FeastDetailFragment"
+        android:label="FeastDetailFragment" >
+        <action
+            android:id="@+id/action_feastDetailFragment_to_feastDayFragment"
+            app:destination="@id/slidingMonthlyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/slidingMonthlyFragment"
+        android:name="com.kingstek.companion.ui.calender.SlidingMonthlyFragment"
+        android:label="FeastDayFragment"
+        tools:layout="@layout/fragment_sliding_monthly" />
 </navigation>
