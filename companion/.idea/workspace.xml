@@ -9,18 +9,16 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6290f196-b7f4-49a6-94e9-5240f145db12" name="Default Changelist" comment="add fire base integration">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/backround_gradient_dark_main_color.xml" afterDir="false" />
+    <list default="true" id="6290f196-b7f4-49a6-94e9-5240f145db12" name="Default Changelist" comment="login screen">
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_log_in.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_log_in.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/kingsleyokoye/.android/avd/Nexus_5_API_30.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[10.129.169.75:5555]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -233,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672770109116</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="login screen">
+      <created>1672870451465</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1672870451465</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -261,7 +266,8 @@
     <MESSAGE value="Add calendar Ui and viewmodel class" />
     <MESSAGE value="Add calendar view with text" />
     <MESSAGE value="Add feast day details" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add feast day details" />
+    <MESSAGE value="login screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="login screen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
