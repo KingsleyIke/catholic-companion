@@ -1,6 +1,7 @@
 package com.kingstek.companion
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -36,7 +37,7 @@ private lateinit var binding: ActivityHomeBinding
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.nav_home, R.id.nav_news, R.id.nav_parish, R.id.nav_calender, R.id.nav_catechism, R.id.nav_prayers, R.id.nav_readings), drawerLayout)
+            R.id.nav_home, R.id.nav_news, R.id.nav_parish, R.id.nav_calender, R.id.nav_catechism, R.id.nav_prayers, R.id.nav_readings, R.id.logInFragment), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
@@ -51,4 +52,8 @@ private lateinit var binding: ActivityHomeBinding
         val navController = findNavController(R.id.nav_host_fragment_content_home)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
+//    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+//        TODO("Not yet implemented")
+//    }
 }

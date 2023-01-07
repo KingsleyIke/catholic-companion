@@ -20,4 +20,5 @@
     <color name="sub_color_very_light">#E9D3D3</color>
     <color name="gray">#D9D9D9</color>
     <color name="black_transparent">#cc000000</color>
+    <color name="dark_color_background">#23010A</color>
 </resources>
