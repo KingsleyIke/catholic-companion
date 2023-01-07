@@ -69,31 +69,6 @@ class DummyData {
         R.drawable.rosary_bible
     )
 
-    private val parish: HomeModel = HomeModel(
-        "Find Parish",
-        "Looking for parish near you? Click here",
-        R.drawable.ic_baseline_church_24
-    )
-    private val calendar = HomeModel(
-        "Calender ",
-        "Get a daily list of saints, feasts and memorials",
-        R.drawable.ic_baseline_calendar_24
-    )
-    private val catechism = HomeModel(
-        "Catechism",
-        "Start and end your day with prayers",
-        R.drawable.ic_baseline_catechism_2_24
-    )
-    private val listOfParish = HomeModel(
-        "List of Parish",
-        "Get parish mass tie and activities",
-        R.drawable.ic_baseline_church_24
-    )
-    private val dailyReadings =
-        HomeModel("Daily Readings", "Coming Soon", R.drawable.ic_baseline_readings_24)
-    private val simplePrayers =
-        HomeModel("Simple Prayers", "Coming Soon", R.drawable.ic_baseline_record_voice_over_24)
-
     private val parishImage =
         arrayListOf<Int>(R.drawable.st_cyril_church, R.drawable.st_cyril, R.drawable.image_cyril)
     private val sundayMass = arrayListOf("6:30am, First Mass", "7:30am, Children mass", "6:00pm, Evening mass")
@@ -212,15 +187,6 @@ class DummyData {
         churchActivities,
         announcement,
         arrayListOf(gallery1, gallery2, gallery1, gallery2, gallery1, gallery2)
-    )
-
-    val homeList: ArrayList<HomeModel> = arrayListOf(
-        parish,
-        calendar,
-        listOfParish,
-        dailyReadings,
-        catechism,
-        simplePrayers
     )
 
     val newsList: ArrayList<NewsModel> = arrayListOf(

@@ -4,8 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.kingstek.companion.dummy_data.HomeModel
 import com.kingstek.companion.ui.BaseViewModel
+import com.kingstek.companion.utils.DataUtils
 
 class HomeViewModel : BaseViewModel() {
+
+    private val dataUtils = DataUtils()
 
     private val _text = MutableLiveData<String>().apply {
         value = "News"
@@ -14,7 +17,8 @@ class HomeViewModel : BaseViewModel() {
 
 
     private val _homeList = MutableLiveData<List<HomeModel>>().apply {
-        value = data.homeList
+        //todo use enum classes
+        value = dataUtils.homeList
     }
     val homeList = _homeList
 }

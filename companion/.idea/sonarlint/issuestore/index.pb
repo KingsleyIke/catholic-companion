@@ -1,14 +1,8 @@
 
-]
--app/src/main/res/drawable/ic_menu_gallery.xml,7/e/7e1664e47943074dd2a71beaa3c2213fab3b645a
-_
-/app/src/main/res/drawable/ic_menu_slideshow.xml,c/3/c338d88ff1e72ff9e67d23f5de5c72ff811f625f
 Z
 *app/src/main/res/drawable/side_nav_bar.xml,8/b/8bced72a6668a3dd684c3e47f0553968df06271a
 q
 Aapp/src/main/java/com/kingstek/companion/ui/news/NewsViewModel.kt,d/0/d078004c2bd20c984943e4c17c4b516081f549c6
-q
-Aapp/src/main/java/com/kingstek/companion/ui/home/HomeViewModel.kt,c/6/c6b03bac75f8e3f3ded5ba4c233dd57e8c720ef7
 u
 Eapp/src/main/java/com/kingstek/companion/ui/parish/ParishViewModel.kt,d/1/d14908962cb69e765102e99355929d3d8e1ba43e
 A
@@ -27,22 +21,14 @@ s
 Capp/src/main/java/com/kingstek/companion/dummy_data/Announcement.kt,8/d/8df591e1ca46edd57db466dc1804b9be2cced6d0
 |
 Lapp/src/main/java/com/kingstek/companion/ui/parish/ParishGalleryViewModel.kt,3/4/34c8bcb6d590158f29132afbd415af0166fda236
-p
-@app/src/main/java/com/kingstek/companion/dummy_data/DummyData.kt,4/1/418dc5bf3398e46ecda44cf63c3a8429990ef8d3
 {
 Kapp/src/main/java/com/kingstek/companion/ui/parish/ParishGalleryFragment.kt,5/2/5235f2731fac1a458bd14d84ce4ff846504f34a1
 z
 Japp/src/main/java/com/kingstek/companion/ui/catechism/CatechismFragment.kt,4/c/4ce9f1429cf8fdf9c38f51e8dca9aa951d720e05
 r
 Bapp/src/main/java/com/kingstek/companion/ui/admin/AdminFragment.kt,f/d/fd3136457fc659e7a427c042404b88ec0a55c055
-{
-Kapp/src/main/java/com/kingstek/companion/ui/parish/ParishDetailsFragment.kt,4/6/466be2346a4931fb0f325b20b77120dc52b2a8cb
 x
 Happ/src/main/java/com/kingstek/companion/ui/news/NewsDetailsViewModel.kt,2/9/297ff657f1dd529fbcba784be7c9360663582697
-l
-<app/src/main/java/com/kingstek/companion/ui/BaseViewModel.kt,7/3/73c9d95d104ea0a9f73f60f83f7607237eedfb37
-w
-Gapp/src/main/java/com/kingstek/companion/ui/news/NewsDetailsFragment.kt,c/1/c1844c124ddaca5fafb03c3e9e10d0a026778a05
 x
 Happ/src/main/java/com/kingstek/companion/ui/calender/CalenderFragment.kt,3/2/32d227a6c0fc374b89b95b1d9f82b38b400b5afb
 t
@@ -57,5 +43,3 @@ Kapp/src/main/java/com/kingstek/companion/ui/calender/FeastDetailFragment.kt,a/
 app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
 o
 ?app/src/main/java/com/kingstek/companion/OnItemClickListener.kt,9/d/9d76366c31f5afdc2c5094935d18d73c77139271
-h
-8app/src/main/java/com/kingstek/companion/HomeActivity.kt,4/0/40e7a307f9bf44f0e84c72c00d67c837e272d0f5

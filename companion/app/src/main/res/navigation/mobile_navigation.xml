@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_nav_home_to_nav_calender"
             app:destination="@id/nav_calender" />
+        <action
+            android:id="@+id/action_nav_home_to_logInFragment"
+            app:destination="@id/logInFragment" />
     </fragment>
 
     <fragment
@@ -95,6 +98,9 @@
         <action
             android:id="@+id/action_parishDetailsFragment_to_updateParishInfoFragment"
             app:destination="@id/updateParishInfoFragment" />
+        <action
+            android:id="@+id/action_parishDetailsFragment_to_logInFragment"
+            app:destination="@id/logInFragment" />
     </fragment>
     <fragment
         android:id="@+id/mapsFragment"
@@ -140,4 +146,27 @@
         android:name="com.kingstek.companion.ui.calender.SlidingMonthlyFragment"
         android:label="FeastDayFragment"
         tools:layout="@layout/fragment_sliding_monthly" />
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.kingstek.companion.ui.authentication.LogInFragment"
+        android:label="fragment_log_in"
+        tools:layout="@layout/fragment_log_in" >
+        <action
+            android:id="@+id/action_logInFragment_to_singInFragment"
+            app:destination="@id/singInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/singInFragment"
+        android:name="com.kingstek.companion.ui.authentication.SingInFragment"
+        android:label="fragment_sing_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_singInFragment_to_forgetPasswordFragment"
+            app:destination="@id/forgetPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgetPasswordFragment"
+        android:name="com.kingstek.companion.ui.authentication.ForgetPasswordFragment"
+        android:label="fragment_forget_password"
+        tools:layout="@layout/fragment_forget_password" />
 </navigation>

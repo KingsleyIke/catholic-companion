@@ -130,8 +130,12 @@ class ParishDetailsFragment : Fragment() {
             Navigation.findNavController(it).navigate(action)
         }
 
+        binding.btnBecomeContributor.setOnClickListener{
+            it.findNavController().navigate(R.id.logInFragment)
+        }
+
         binding.tvUpdateParishInfo.setOnClickListener{
-            it.findNavController().navigate(R.id.updateParishInfoFragment)
+            it.findNavController().navigate(R.id.ct_contributor)
         }
         return root
     }

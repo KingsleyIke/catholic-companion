@@ -62,8 +62,8 @@
             />
 
         <item
-            android:id="@+id/log_in"
-            android:title="Log in as Contributor"
+            android:id="@+id/logInFragment"
+            android:title="@string/log_in_as_contributor"
             />
 
         <item

@@ -36,4 +36,6 @@
     <string name="select_parish">Select Parish </string>
     <string name="previous_year">Previous Year</string>
     <string name="next_year">Next Year</string>
+    <string name="log_in_as_contributor">Log in as Contributor</string>
+    <string name="click_here">Click Here</string>
 </resources>
