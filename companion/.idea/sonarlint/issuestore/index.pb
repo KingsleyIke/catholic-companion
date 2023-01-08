@@ -5,12 +5,8 @@ q
 Aapp/src/main/java/com/kingstek/companion/ui/news/NewsViewModel.kt,d/0/d078004c2bd20c984943e4c17c4b516081f549c6
 u
 Eapp/src/main/java/com/kingstek/companion/ui/parish/ParishViewModel.kt,d/1/d14908962cb69e765102e99355929d3d8e1ba43e
-A
-gradle.properties,2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4
 X
 (gradle/wrapper/gradle-wrapper.properties,f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
-F
-app/proguard-rules.pro,9/e/9e08934d811afe28fbc77aaa3c0d747b94348db9
 q
 Aapp/src/main/java/com/kingstek/companion/dummy_data/Activities.kt,4/c/4c9be698bc312ed9544151c4145ba12775bb1653
 P
@@ -35,11 +31,3 @@ t
 Dapp/src/main/java/com/kingstek/companion/ui/location/MapsFragment.kt,7/8/78f37da3f5cc1104c87560fc72d4c354ece08fff
 {
 Kapp/src/main/java/com/kingstek/companion/ui/calender/FeastDetailFragment.kt,a/4/a4916943b83651b2a23b4ceca682aa57d35b3fcc
-<
-build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
-?
-settings.gradle,0/5/05efc8b1657769a27696d478ded1e95f38737233
-@
-app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
-o
-?app/src/main/java/com/kingstek/companion/OnItemClickListener.kt,9/d/9d76366c31f5afdc2c5094935d18d73c77139271

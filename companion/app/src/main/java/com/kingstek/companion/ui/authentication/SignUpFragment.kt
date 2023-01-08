@@ -6,18 +6,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.kingstek.companion.R
 import com.kingstek.companion.databinding.FragmentSignUpBinding
+import com.kingstek.companion.utils.ProgressDialog
 
 class SingInFragment : Fragment() {
 
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
+    private lateinit var viewModel: SignUpViewModel
+    private lateinit var progressDialog: ProgressDialog
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         _binding = FragmentSignUpBinding.inflate(inflater, container, false)
+
+        viewModel = ViewModelProvider(this)[SignUpViewModel::class.java]
 
         binding.btnReturnToLogin.setOnClickListener{
             it.findNavController().navigate(R.id.logInFragment)
@@ -26,7 +33,33 @@ class SingInFragment : Fragment() {
         binding.tvReturnToLogin.setOnClickListener{
             it.findNavController().navigate(R.id.logInFragment)
         }
+
+
+        progressDialog = ProgressDialog(requireContext())
+
+        binding.btnSingUp.setOnClickListener {
+
+            progressDialog.showProgressDialog("Loading")
+
+            setData()
+            viewModel.signUp()
+
+            progressDialog.hideProgressDialog()
+        }
+
         return binding.root
+    }
+
+    fun setData () {
+        viewModel.email?.postValue(binding.etEmailAddress.text.toString())
+        viewModel.firstName.postValue(binding.etFirstName.text.toString())
+        viewModel.lastName?.value = binding.etLastName.text.toString()
+        viewModel.userName?.value = binding.etUsernameName.text.toString()
+        viewModel.password?.postValue(binding.etConfrimPassword.text.toString())
+    }
+
+    fun authenticateValues() {
+
     }
 
     override fun onDestroyView() {

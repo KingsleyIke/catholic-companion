@@ -18,4 +18,7 @@ object Constants {
     const val M_MAX_ENTRIES = 5
 
     val TAG = MapsFragment::class.java.simpleName
+
+    const val USERS: String = "users"
+
 }
