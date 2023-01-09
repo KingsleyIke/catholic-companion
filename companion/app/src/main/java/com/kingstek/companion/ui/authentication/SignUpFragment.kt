@@ -51,8 +51,8 @@ class SingInFragment : Fragment() {
     }
 
     fun setData () {
-        viewModel.email?.value = binding.etEmailAddress.text.toString()
-        viewModel.firstName.value = binding.etFirstName.text.toString()
+        viewModel.email?.postValue(binding.etEmailAddress.text.toString())
+        viewModel.firstName.postValue(binding.etFirstName.text.toString())
         viewModel.lastName?.value = binding.etLastName.text.toString()
         viewModel.userName?.value = binding.etUsernameName.text.toString()
         viewModel.password?.value = binding.etConfrimPassword.text.toString()
