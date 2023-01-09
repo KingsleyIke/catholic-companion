@@ -17,6 +17,7 @@ class LogInFragment : Fragment() {
     private val binding get() = _binding!!
 
     //todo authenticate email and password with corresponding messages whine empty or does not meet requirements or passwrod policy
+    //todo on colpletion of login display dialog to tell user what can be done and if to return to home of move to parish announce ubdate screen, or gallery update screen
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         _binding = FragmentLogInBinding.inflate(inflater, container, false)

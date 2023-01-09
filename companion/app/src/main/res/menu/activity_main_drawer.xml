@@ -43,17 +43,19 @@
     <group
         android:id="@+id/bottom_menu"
         android:checkableBehavior="none">
+<!--        <item-->
+<!--            android:id="@+id/admin"-->
+<!--            android:title="@string/admin"-->
+<!--            />-->
+
         <item
-            android:id="@+id/admin"
-            android:title="@string/admin"
+            android:id="@+id/logInFragment"
+            android:title="@string/log_in_as_contributor"
             />
+
         <item
             android:id="@+id/settings"
             android:title="@string/setting"
-            />
-        <item
-            android:id="@+id/contact_us"
-            android:title="@string/contact_us"
             />
 
         <item
@@ -61,10 +63,10 @@
             android:title="@string/share_with_friends"
             />
 
-        <item
-            android:id="@+id/logInFragment"
-            android:title="@string/log_in_as_contributor"
-            />
+<!--        <item-->
+<!--            android:id="@+id/contact_us"-->
+<!--            android:title="@string/contact_us"-->
+<!--            />-->
 
         <item
             android:id="@+id/powered_by"
