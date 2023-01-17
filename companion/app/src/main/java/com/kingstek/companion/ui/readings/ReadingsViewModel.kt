@@ -1,4 +1,6 @@
 package com.kingstek.companion.ui.readings
 
-class ReadingsViewModel {
+import com.kingstek.companion.ui.BaseViewModel
+
+class ReadingsViewModel : BaseViewModel() {
 }
