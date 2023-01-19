@@ -1,4 +1,6 @@
 package com.kingstek.companion.ui.prayers
 
-class PrayersViewModel {
+import com.kingstek.companion.ui.BaseViewModel
+
+class PrayersViewModel : BaseViewModel() {
 }
