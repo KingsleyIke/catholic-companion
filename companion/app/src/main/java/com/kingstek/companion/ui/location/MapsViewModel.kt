@@ -1,4 +1,6 @@
 package com.kingstek.companion.ui.location
 
-class MapsViewModel {
+import com.kingstek.companion.ui.BaseViewModel
+
+class MapsViewModel : BaseViewModel() {
 }
