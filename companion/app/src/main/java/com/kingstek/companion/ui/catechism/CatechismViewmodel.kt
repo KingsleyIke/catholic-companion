@@ -1,4 +1,6 @@
 package com.kingstek.companion.ui.catechism
 
-class CatechismViewmodel {
+import com.kingstek.companion.ui.BaseViewModel
+
+class CatechismViewmodel : BaseViewModel() {
 }
