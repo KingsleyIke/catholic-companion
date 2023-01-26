@@ -39,8 +39,10 @@ class HomeFragment : Fragment() {
 
         binding.textHomeNews.setOnClickListener {
             it.findNavController().navigate(com.kingstek.companion.R.id.nav_news)
+
 //      Navigation.findNavController(it).navigate(R.id.nav_news)
 //      Navigation.findNavController(it).navigate(R.id.action_nav_home_to_nav_news)
+
         }
 
         val newsRecyclerView = binding.newsRecyclerView
