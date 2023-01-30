@@ -1,3 +1,3 @@
 # catholic-companion
 
-An app to
+An app to view parishes on map
