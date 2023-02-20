@@ -9,8 +9,6 @@ X
 (gradle/wrapper/gradle-wrapper.properties,f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
 q
 Aapp/src/main/java/com/kingstek/companion/dummy_data/Activities.kt,4/c/4c9be698bc312ed9544151c4145ba12775bb1653
-P
- app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 |
 Lapp/src/main/java/com/kingstek/companion/ui/parish/ParishDetailsViewModel.kt,3/c/3cc0a0e4b700ce74a5fdbf52e54d0b1cd6dce0ce
 s
@@ -19,15 +17,17 @@ Capp/src/main/java/com/kingstek/companion/dummy_data/Announcement.kt,8/d/8df591
 Lapp/src/main/java/com/kingstek/companion/ui/parish/ParishGalleryViewModel.kt,3/4/34c8bcb6d590158f29132afbd415af0166fda236
 {
 Kapp/src/main/java/com/kingstek/companion/ui/parish/ParishGalleryFragment.kt,5/2/5235f2731fac1a458bd14d84ce4ff846504f34a1
-z
-Japp/src/main/java/com/kingstek/companion/ui/catechism/CatechismFragment.kt,4/c/4ce9f1429cf8fdf9c38f51e8dca9aa951d720e05
 r
 Bapp/src/main/java/com/kingstek/companion/ui/admin/AdminFragment.kt,f/d/fd3136457fc659e7a427c042404b88ec0a55c055
 x
 Happ/src/main/java/com/kingstek/companion/ui/news/NewsDetailsViewModel.kt,2/9/297ff657f1dd529fbcba784be7c9360663582697
 x
 Happ/src/main/java/com/kingstek/companion/ui/calender/CalenderFragment.kt,3/2/32d227a6c0fc374b89b95b1d9f82b38b400b5afb
-t
-Dapp/src/main/java/com/kingstek/companion/ui/location/MapsFragment.kt,7/8/78f37da3f5cc1104c87560fc72d4c354ece08fff
 {
 Kapp/src/main/java/com/kingstek/companion/ui/calender/FeastDetailFragment.kt,a/4/a4916943b83651b2a23b4ceca682aa57d35b3fcc
+…
+Uapp/src/main/java/com/kingstek/companion/ui/authentication/ForgetPasswordViewModel.kt,7/6/76d60efc8ba8fe72d2c4aee2b34060ed6bb23a36
+u
+Eapp/src/main/java/com/kingstek/companion/ui/location/MapsViewModel.kt,c/8/c81a230fa30e8707734ca4121cab250dfd16ce29
+k
+;app/src/main/java/com/kingstek/companion/utils/Constants.kt,b/d/bd9a56a8a60000b7935a25546b3ee1bd6096c0d4

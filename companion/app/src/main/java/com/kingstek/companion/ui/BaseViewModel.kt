@@ -1,5 +1,6 @@
 package com.kingstek.companion.ui
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.FirebaseFirestore
@@ -14,8 +15,14 @@ open class BaseViewModel : ViewModel() {
 
 
     var mFirestore = FirebaseFirestore.getInstance()
-    var email: MutableLiveData<String>? = null
-    var password: MutableLiveData<String>? = null
+
+    private val _email = MutableLiveData<String>()
+    val email: MutableLiveData<String>
+    get() = _email
+
+    private val _password = MutableLiveData<String>()
+    val password: MutableLiveData<String>
+    get() = _password
 
     val data = DummyData()
 
