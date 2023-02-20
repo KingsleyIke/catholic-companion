@@ -1,6 +1,8 @@
 package com.kingstek.companion.ui.authentication
 
+import android.content.Context
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -12,10 +14,22 @@ import com.kingstek.companion.utils.Constants
 class SignUpViewModel : BaseViewModel() {
 
 
-    var firstName =  MutableLiveData ("")
-    var lastName: MutableLiveData<String>? = null
-    var userName: MutableLiveData<String>? = null
-    var profileComplete: MutableLiveData<Int>? = null
+    private val _firstName =  MutableLiveData<String>()
+    val firstName: MutableLiveData<String>
+    get() = _firstName
+
+    private val _lastName = MutableLiveData<String>()
+    val lastName: MutableLiveData<String>
+    get() = _lastName
+
+    private val _userName = MutableLiveData<String>()
+    val userName: MutableLiveData<String>
+    get() = _userName
+
+    private val _profileComplete = MutableLiveData<Int>()
+    val profileComplete: MutableLiveData<Int>
+    get() = _profileComplete
+
     var registerSuccess: MutableLiveData<Boolean>? = null
     var registerErrorMessage: MutableLiveData<String>? = null
 
@@ -42,12 +56,13 @@ class SignUpViewModel : BaseViewModel() {
                     )
 
                     registerUser(user)
-//                    registerSuccess?.value = true
+                    registerSuccess?.value = true
 
                 } else {
 
-//                    registerSuccess?.value = false
+                    registerSuccess?.value = false
                     registerErrorMessage?.value = task.exception!!.message.toString()
+                    Log.e("Error msg", task.exception!!.message.toString())
 
                 }
             }
@@ -60,10 +75,14 @@ class SignUpViewModel : BaseViewModel() {
             .set(userInfo, SetOptions.merge())
             .addOnSuccessListener {
 
+                registerSuccess?.value = false
+
             }
             .addOnFailureListener {
 //                registerSuccess?.value = false
                 registerErrorMessage?.value = it.message.toString()
+                Log.e("Error msg", it.message.toString())
+
             }
     }
 }

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -39,27 +40,45 @@ class SingInFragment : Fragment() {
 
         binding.btnSingUp.setOnClickListener {
 
+            setData()
+
+            if (!authenticateValues()) {
+                return@setOnClickListener
+            }
+
             progressDialog.showProgressDialog("Loading")
 
-            setData()
             viewModel.signUp()
 
+            if (viewModel.registerSuccess?.value == true) {
+                Toast.makeText(requireContext(), "Profile created Successfully", Toast.LENGTH_LONG).show()
+            }
+
             progressDialog.hideProgressDialog()
+        }
+
+        viewModel.registerSuccess?.observe(viewLifecycleOwner) {
+            if (!it) {
+                Toast.makeText(requireContext(), viewModel.registerErrorMessage?.value.toString(), Toast.LENGTH_LONG)
+                    .show()
+            }
         }
 
         return binding.root
     }
 
     fun setData () {
-        viewModel.email?.postValue(binding.etEmailAddress.text.toString())
+        viewModel.email.value = binding.etEmailAddress.text.toString()
+        viewModel.password.value = binding.etConfrimPassword.text.toString()
+
         viewModel.firstName.postValue(binding.etFirstName.text.toString())
-        viewModel.lastName?.value = binding.etLastName.text.toString()
-        viewModel.userName?.value = binding.etUsernameName.text.toString()
-        viewModel.password?.value = binding.etConfrimPassword.text.toString()
+        viewModel.lastName?.postValue(binding.etLastName.text.toString())
+        viewModel.userName?.postValue(binding.etUsernameName.text.toString())
     }
 
-    fun authenticateValues() {
+    fun authenticateValues() : Boolean {
 
+        return true
     }
 
     override fun onDestroyView() {
