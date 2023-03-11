@@ -50,9 +50,9 @@ class SignUpViewModel : BaseViewModel() {
                     val user = User(
                         firebaseUser.uid,
                         firstName.value!!.trim {it <= ' '},
-                        lastName?.value!!.trim {it <= ' '},
-                        userName?.value!!.trim {it <= ' '},
-                        email?.value!!.trim {it <= ' '}
+                        lastName.value!!.trim {it <= ' '},
+                        userName.value!!.trim {it <= ' '},
+                        email.value!!.trim {it <= ' '}
                     )
 
                     registerUser(user)

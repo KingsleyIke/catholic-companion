@@ -31,3 +31,21 @@ u
 Eapp/src/main/java/com/kingstek/companion/ui/location/MapsViewModel.kt,c/8/c81a230fa30e8707734ca4121cab250dfd16ce29
 k
 ;app/src/main/java/com/kingstek/companion/utils/Constants.kt,b/d/bd9a56a8a60000b7935a25546b3ee1bd6096c0d4
+v
+Fapp/src/main/java/com/kingstek/companion/ui/calender/AddTextToDates.kt,c/5/c56fc3e25d0e696c2f8d89b9aef083432c69023c
+z
+Japp/src/main/java/com/kingstek/companion/ui/catechism/CatechismFragment.kt,4/c/4ce9f1429cf8fdf9c38f51e8dca9aa951d720e05
+{
+Kapp/src/main/java/com/kingstek/companion/ui/catechism/CatechismViewmodel.kt,0/2/023dbff5888213f0204f849c8d0a4bf76f5c2ddc
+o
+?app/src/main/java/com/kingstek/companion/ui/home/NewsAdapter.kt,c/d/cd3e1add80a8540718d216e8bff7327b0b8bd9b0
+p
+@app/src/main/java/com/kingstek/companion/ui/home/HomeFragment.kt,1/c/1c2e227503da93a02496299a1b602de6daf897ac
+q
+Aapp/src/main/java/com/kingstek/companion/ui/home/HomeViewModel.kt,c/6/c6b03bac75f8e3f3ded5ba4c233dd57e8c720ef7
+o
+?app/src/main/java/com/kingstek/companion/ui/home/HomeAdapter.kt,9/1/91e7232893f725ff191b8869fe76bebda9636831
+P
+ app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
+h
+8app/src/main/java/com/kingstek/companion/HomeActivity.kt,4/0/40e7a307f9bf44f0e84c72c00d67c837e272d0f5

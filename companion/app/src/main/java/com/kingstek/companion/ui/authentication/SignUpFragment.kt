@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import com.google.android.material.snackbar.Snackbar
 import com.kingstek.companion.R
 import com.kingstek.companion.databinding.FragmentSignUpBinding
 import com.kingstek.companion.utils.ProgressDialog
@@ -19,64 +20,60 @@ class SingInFragment : Fragment() {
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
     private lateinit var viewModel: SignUpViewModel
-    private lateinit var progressDialog: ProgressDialog
+//    private lateinit var progressDialog: ProgressDialog
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         _binding = FragmentSignUpBinding.inflate(inflater, container, false)
-
         viewModel = ViewModelProvider(this)[SignUpViewModel::class.java]
 
-        binding.btnReturnToLogin.setOnClickListener{
+        binding.btnReturnToLogin.setOnClickListener {
             it.findNavController().navigate(R.id.logInFragment)
         }
 
-        binding.tvReturnToLogin.setOnClickListener{
+        binding.tvReturnToLogin.setOnClickListener {
             it.findNavController().navigate(R.id.logInFragment)
         }
 
-
-        progressDialog = ProgressDialog(requireContext())
-
-        binding.btnSingUp.setOnClickListener {
+        binding.btnSingUp.setOnClickListener { view ->
 
             setData()
-
             if (!authenticateValues()) {
                 return@setOnClickListener
             }
 
-            progressDialog.showProgressDialog("Loading")
+            val snackBar = Snackbar.make(view, "Loading", Snackbar.LENGTH_LONG)
+            snackBar.show()
 
             viewModel.signUp()
-
-            if (viewModel.registerSuccess?.value == true) {
-                Toast.makeText(requireContext(), "Profile created Successfully", Toast.LENGTH_LONG).show()
+            viewModel.registerSuccess?.observe(viewLifecycleOwner) {
+                if (!it) {
+                    Toast.makeText(requireContext(), viewModel.registerErrorMessage?.value.toString(), Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(requireContext(), "Profile created Successfully", Toast.LENGTH_LONG).show()
+                }
             }
 
-            progressDialog.hideProgressDialog()
-        }
+//            if (viewModel.registerSuccess?.value == true) {
+//                Toast.makeText(requireContext(), "Profile created Successfully", Toast.LENGTH_LONG).show()
+//            }
 
-        viewModel.registerSuccess?.observe(viewLifecycleOwner) {
-            if (!it) {
-                Toast.makeText(requireContext(), viewModel.registerErrorMessage?.value.toString(), Toast.LENGTH_LONG)
-                    .show()
-            }
+            binding.progressBar.visibility = View.INVISIBLE
         }
 
         return binding.root
     }
 
-    fun setData () {
+    fun setData() {
         viewModel.email.value = binding.etEmailAddress.text.toString()
         viewModel.password.value = binding.etConfrimPassword.text.toString()
 
         viewModel.firstName.postValue(binding.etFirstName.text.toString())
-        viewModel.lastName?.postValue(binding.etLastName.text.toString())
-        viewModel.userName?.postValue(binding.etUsernameName.text.toString())
+        viewModel.lastName.postValue(binding.etLastName.text.toString())
+        viewModel.userName.postValue(binding.etUsernameName.text.toString())
     }
 
-    fun authenticateValues() : Boolean {
+    fun authenticateValues(): Boolean {
 
         return true
     }
