@@ -39,4 +39,17 @@
     <string name="log_in_as_contributor">Log in as Contributor</string>
     <string name="click_here">Click Here</string>
     <string name="sign_up">Sign Up</string>
+    <string name="enter_first_name">Enter First Name</string>
+    <string name="enter_user_name">Enter User Name</string>
+    <string name="enter_last_name">Enter Last name</string>
+    <string name="user_name">User Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="email">Email</string>
+    <string name="enter_email_address">Enter email address</string>
+    <string name="password">Password</string>
+    <string name="enter_password">Enter password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="login">Login</string>
 </resources>
