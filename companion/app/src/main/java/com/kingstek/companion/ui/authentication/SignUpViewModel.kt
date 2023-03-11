@@ -30,13 +30,20 @@ class SignUpViewModel : BaseViewModel() {
     val profileComplete: MutableLiveData<Int>
     get() = _profileComplete
 
-    var registerSuccess: MutableLiveData<Boolean>? = null
-    var registerErrorMessage: MutableLiveData<String>? = null
+
+    private val _registerSuccess = MutableLiveData<Boolean>()
+    val registerSuccess: MutableLiveData<Boolean>
+    get() = _registerSuccess
+
+
+    private val _registerErrorMessage =  MutableLiveData<String>()
+    val registerErrorMessage: MutableLiveData<String>
+    get() = _registerErrorMessage
 
     fun signUp() {
 
         if (email?.value == null || password?.value == null) {
-            registerErrorMessage?.value = "Error in email or password entered"
+            registerErrorMessage.value = "Error in email or password entered"
             Log.e("ERRROR", "errror")
             return
         }
@@ -56,13 +63,13 @@ class SignUpViewModel : BaseViewModel() {
                     )
 
                     registerUser(user)
-                    registerSuccess?.value = true
+                    registerSuccess.postValue(true)
 
                 } else {
 
-                    registerSuccess?.value = false
-                    registerErrorMessage?.value = task.exception!!.message.toString()
-                    Log.e("Error msg", task.exception!!.message.toString())
+                    registerSuccess.postValue(false)
+                    registerErrorMessage.value = task.exception!!.message.toString()
+                    Log.e("Error msgsssss", task.exception!!.message.toString())
 
                 }
             }
@@ -75,12 +82,12 @@ class SignUpViewModel : BaseViewModel() {
             .set(userInfo, SetOptions.merge())
             .addOnSuccessListener {
 
-                registerSuccess?.value = false
+                registerSuccess.postValue(false)
 
             }
             .addOnFailureListener {
 //                registerSuccess?.value = false
-                registerErrorMessage?.value = it.message.toString()
+                registerErrorMessage.value = it.message.toString()
                 Log.e("Error msg", it.message.toString())
 
             }
