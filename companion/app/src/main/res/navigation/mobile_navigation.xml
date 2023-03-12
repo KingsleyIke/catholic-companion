@@ -115,6 +115,9 @@
         <argument
             android:name="position"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_parishGalleryFragment_to_updateGalleryFragment"
+            app:destination="@id/updateGalleryFragment" />
     </fragment>
     <fragment
         android:id="@+id/updateParishInfoFragment"
@@ -169,4 +172,8 @@
         android:name="com.kingstek.companion.ui.authentication.ForgetPasswordFragment"
         android:label="fragment_forget_password"
         tools:layout="@layout/fragment_forget_password" />
+    <fragment
+        android:id="@+id/updateGalleryFragment"
+        android:name="com.kingstek.companion.ui.parish.UpdateGalleryFragment"
+        android:label="UpdateGalleryFragment" />
 </navigation>
