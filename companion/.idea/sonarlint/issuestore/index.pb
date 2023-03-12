@@ -25,8 +25,6 @@ x
 Happ/src/main/java/com/kingstek/companion/ui/calender/CalenderFragment.kt,3/2/32d227a6c0fc374b89b95b1d9f82b38b400b5afb
 {
 Kapp/src/main/java/com/kingstek/companion/ui/calender/FeastDetailFragment.kt,a/4/a4916943b83651b2a23b4ceca682aa57d35b3fcc
-…
-Uapp/src/main/java/com/kingstek/companion/ui/authentication/ForgetPasswordViewModel.kt,7/6/76d60efc8ba8fe72d2c4aee2b34060ed6bb23a36
 u
 Eapp/src/main/java/com/kingstek/companion/ui/location/MapsViewModel.kt,c/8/c81a230fa30e8707734ca4121cab250dfd16ce29
 k
