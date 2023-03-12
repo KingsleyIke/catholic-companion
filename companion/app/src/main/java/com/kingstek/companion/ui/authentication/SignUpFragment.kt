@@ -20,6 +20,7 @@ import com.kingstek.companion.utils.ProgressDialog
 
 class SingInFragment : Fragment() {
 
+    //TODO add loading Icon - Progrees basr
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
     private lateinit var viewModel: SignUpViewModel
@@ -29,6 +30,8 @@ class SingInFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentSignUpBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this)[SignUpViewModel::class.java]
+
+        binding.progressBar.hide()
 
         binding.btnReturnToLogin.setOnClickListener {
             it.findNavController().navigate(R.id.logInFragment)
@@ -89,8 +92,7 @@ class SingInFragment : Fragment() {
                 return@setOnClickListener
             }
 
-//            val snackBar = Snackbar.make(view, "Loading", Snackbar.LENGTH_LONG)
-//            snackBar.show()
+            binding.progressBar.smoothToShow()
 
             viewModel.signUp()
 
@@ -106,11 +108,7 @@ class SingInFragment : Fragment() {
                 }
             }
 
-//            if (viewModel.registerSuccess?.value == true) {
-//                Toast.makeText(requireContext(), "Profile created Successfully", Toast.LENGTH_LONG).show()
-//            }
-
-//            binding.progressBar.visibility = View.INVISIBLE
+            binding.progressBar.smoothToHide()
         }
 
         return binding.root
@@ -249,7 +247,7 @@ class SingInFragment : Fragment() {
             return false
         }
 
-        if (!binding.etPassword.text.contains("[A-Z]".toRegex()) || !binding.etPassword.text.contains("[a-z]".toRegex())) {
+        if (!binding.etPassword.text.contains("[A-Za-z]".toRegex())) {
             binding.passwordErrorMessage.text = "Password must contain letters"
             return false
         }

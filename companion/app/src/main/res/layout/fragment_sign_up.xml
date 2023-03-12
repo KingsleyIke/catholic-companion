@@ -247,6 +247,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginRight="5dp"
                     android:src="@drawable/ic_baseline_visibility_off_24"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -308,6 +309,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginRight="5dp"
                     android:src="@drawable/ic_baseline_visibility_off_24"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -363,15 +365,19 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tv_return_to_login" />
 
-            <ProgressBar
+            <com.wang.avi.AVLoadingIndicatorView
                 android:id="@+id/progress_bar"
+                style="@style/AVLoadingIndicatorView"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="invisible"
+                android:layout_height="38dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                app:indicatorColor="@color/white"
+                app:indicatorName="BallGridPulseIndicator"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

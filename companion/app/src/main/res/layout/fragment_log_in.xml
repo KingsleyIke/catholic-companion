@@ -51,7 +51,10 @@
         android:background="@drawable/backround_rounded_darker_light_color_update_screen"
         android:drawableLeft="@drawable/ic_baseline_email_24"
         android:hint=" Enter email or Username"
+        android:maxLines="1"
+        android:inputType="text"
         android:padding="10dp"
+        android:textCursorDrawable="@null"
         android:textColor="@color/white"
         android:textColorHint="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,6 +66,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
+        android:maxLines="1"
+        android:inputType="text"
         android:text="Enter email address"
         android:textColor="@color/gray"
         app:layout_constraintStart_toStartOf="@+id/et_email"
@@ -77,25 +82,48 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/et_password"
-        app:layout_constraintStart_toStartOf="@+id/et_password" />
+        app:layout_constraintBottom_toTopOf="@+id/password_layout"
+        app:layout_constraintStart_toStartOf="@+id/password_layout" />
 
-    <EditText
-        android:id="@+id/et_password"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/password_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:background="@drawable/backround_rounded_darker_light_color_update_screen"
-        android:drawableLeft="@drawable/ic_baseline_key_24"
-        android:drawableRight="@drawable/ic_baseline_remove_red_eye_24"
-        android:hint=" Enter email or Username"
-        android:padding="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/gray"
-        android:inputType="textPassword"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_email" />
+        app:layout_constraintTop_toBottomOf="@+id/et_email">
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/backround_rounded_darker_light_color_update_screen"
+            android:drawableLeft="@drawable/ic_baseline_key_24"
+            android:hint=" Enter email or Username"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textCursorDrawable="@null"
+            android:textColor="@color/white"
+            android:textColorHint="@color/gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/password_visibility"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/ic_baseline_visibility_off_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/password_error_message"
@@ -105,8 +133,8 @@
         android:text="Enter password"
         android:visibility="visible"
         android:textColor="@color/gray"
-        app:layout_constraintStart_toStartOf="@+id/et_password"
-        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+        app:layout_constraintStart_toStartOf="@+id/password_layout"
+        app:layout_constraintTop_toBottomOf="@+id/password_layout" />
 
     <TextView
         android:id="@+id/tv_forget_password"
@@ -116,8 +144,22 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/et_password"
+        app:layout_constraintEnd_toEndOf="@+id/password_layout"
         app:layout_constraintTop_toBottomOf="@+id/password_error_message" />
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/progress_bar"
+        style="@style/AVLoadingIndicatorView"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        app:indicatorColor="@color/white"
+        app:indicatorName="BallGridPulseIndicator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
         android:id="@+id/btn_log_in"
@@ -130,7 +172,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+        app:layout_constraintTop_toBottomOf="@+id/password_layout" />
 
     <TextView
         android:id="@+id/textView"
