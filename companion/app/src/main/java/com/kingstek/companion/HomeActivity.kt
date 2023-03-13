@@ -1,4 +1,5 @@
 package com.kingstek.companion
+
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -16,13 +17,13 @@ import com.kingstek.companion.databinding.ActivityHomeBinding
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
-private lateinit var binding: ActivityHomeBinding
+    private lateinit var binding: ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-     binding = ActivityHomeBinding.inflate(layoutInflater)
-     setContentView(binding.root)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         setSupportActionBar(binding.appBarHome.toolbar)
 
@@ -36,8 +37,18 @@ private lateinit var binding: ActivityHomeBinding
         val navController = findNavController(R.id.nav_host_fragment_content_home)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.nav_home, R.id.nav_news, R.id.nav_parish, R.id.nav_calender, R.id.nav_catechism, R.id.nav_prayers, R.id.nav_readings, R.id.logInFragment), drawerLayout)
+        appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.nav_home,
+                R.id.nav_news,
+                R.id.nav_parish,
+                R.id.nav_calender,
+                R.id.nav_catechism,
+                R.id.nav_prayers,
+                R.id.nav_readings,
+                R.id.logInFragment
+            ), drawerLayout
+        )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }

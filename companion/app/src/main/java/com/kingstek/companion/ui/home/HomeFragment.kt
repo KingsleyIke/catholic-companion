@@ -32,6 +32,8 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        homeViewModel.isUserSignedIn()
+
 //    val textView: TextView =
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
             binding.textHomeNews.text = it
