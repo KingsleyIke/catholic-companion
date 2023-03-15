@@ -311,13 +311,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:visibility="invisible"
-                android:text="Update Info"
+                android:text="Update Info \nClick here to make contributions, and changes to information for this parish"
                 android:layout_gravity="center"
                 android:padding="10dp"
                 android:textColor="@color/black"
                 android:background="@drawable/backround_rounded_light_color"
                 app:layout_constraintTop_toBottomOf="@id/ct_announcement"
                 />
+
+<!--            todo add info icon for more info on contributions-->
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/ct_parish_gallery"

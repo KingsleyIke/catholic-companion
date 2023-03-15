@@ -108,6 +108,7 @@ class LogInFragment : Fragment() {
                                 }
                             }
                         })
+                    alertDialog.setCancelable(false)
                     alertDialog.show()
 //                    findNavController().navigate(R.id.logInFragment)
                 }

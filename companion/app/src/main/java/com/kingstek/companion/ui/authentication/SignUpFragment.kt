@@ -20,7 +20,7 @@ import com.kingstek.companion.utils.ProgressDialog
 
 class SingInFragment : Fragment() {
 
-    //TODO add loading Icon - Progrees basr
+    //TODO add loading Icon - Progrees bar
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
     private lateinit var viewModel: SignUpViewModel
