@@ -50,7 +50,7 @@ open class BaseViewModel : ViewModel() {
     val parishList = _parishList
 
     fun isUserSignedIn(): Boolean {
-        if( currentUser != null) {
+        if(currentUser != null) {
             Log.d("User", currentUser.uid)
             loggegIn.value = true
             return true

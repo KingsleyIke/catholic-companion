@@ -21,7 +21,7 @@ class ParishDetailsFragment : Fragment() {
     private var _binding: FragmentParishDetailsBinding? = null
     private val binding get() = _binding!!
     val args: ParishDetailsFragmentArgs by navArgs()
-    private lateinit var parishDetailsViewModel: ParishDetailsViewModel
+    private lateinit var viewModel: ParishDetailsViewModel
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -31,11 +31,11 @@ class ParishDetailsFragment : Fragment() {
 
         val position = args.position
 
-        parishDetailsViewModel = ViewModelProvider(this).get(ParishDetailsViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(ParishDetailsViewModel::class.java)
 
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = parishDetailsViewModel.parishList.value?.get(position)?.parishName
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = viewModel.parishList.value?.get(position)?.parishName
 
-        val parishList = parishDetailsViewModel.parishList.value?.get(position)
+        val parishList = viewModel.parishList.value?.get(position)
 
         val sundayMassList = parishList?.sundayMas
         val weekdayMassList = parishList?.weekDayMass
@@ -122,8 +122,23 @@ class ParishDetailsFragment : Fragment() {
         }
 
         //Todo perform all loops asynchronously to reduce time
-
         //todo Display no data when List is empty for all text
+
+        /**
+         * check if user is signed in
+         * and set values accordingly
+         */
+
+        //TODO make use of dataBinding to set values
+        //TODO add dynamic visibility change
+        viewModel.isUserSignedIn()
+        if (viewModel.loggegIn.value!!) {
+            binding.tvUpdateParishInfo.visibility = View.VISIBLE
+            binding.ctContributor.visibility = View.INVISIBLE
+        } else {
+            binding.tvUpdateParishInfo.visibility = View.INVISIBLE
+            binding.ctContributor.visibility = View.VISIBLE
+        }
 
         binding.ctParishGallery.setOnClickListener{
             val action = ParishDetailsFragmentDirections.actionParishDetailsFragmentToParishGalleryFragment(position)
@@ -134,9 +149,10 @@ class ParishDetailsFragment : Fragment() {
             it.findNavController().navigate(R.id.logInFragment)
         }
 
-        binding.tvUpdateParishInfo.setOnClickListener{
-            it.findNavController().navigate(R.id.ct_contributor)
+        binding.tvUpdateParishInfo.setOnClickListener {
+            it.findNavController().navigate(R.id.updateParishInfoFragment)
         }
+
         return root
     }
 
