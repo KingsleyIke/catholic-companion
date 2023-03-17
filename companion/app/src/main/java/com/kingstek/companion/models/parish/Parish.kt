@@ -18,5 +18,7 @@ data class Parish(
     val pastoralTeam: List<PastoralTeam>?,
     val churchActivities: List<Activities>?,
     val churchAnnouncements: List<Announcement>?,
-    val parishGallery: List<ParishGalleryModel>?
+    val parishGallery: List<ParishGalleryModel>?,
+    val approved: Int?,
+    val lastupdate: UpdateDetails?
 ) : Parcelable
