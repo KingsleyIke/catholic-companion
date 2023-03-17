@@ -5,10 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.kingstek.companion.R
-import com.kingstek.companion.dummy_data.ParishGalleryModel
+import com.kingstek.companion.models.parish.ParishGalleryModel
 import com.kingstek.companion.onItemClickListener
 
 class ParishGalleryAdapter(private val parishGalleryModel: List<ParishGalleryModel>, private var mListner: onItemClickListener) : RecyclerView.Adapter<ParishGalleryAdapter.ViewHolder> () {

@@ -1,13 +1,11 @@
 package com.kingstek.companion.ui.authentication
 
-import android.content.Context
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.SetOptions
-import com.kingstek.companion.models.User
+import com.kingstek.companion.models.user.User
 import com.kingstek.companion.ui.BaseViewModel
 import com.kingstek.companion.utils.Constants
 

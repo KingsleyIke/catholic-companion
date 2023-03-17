@@ -1,7 +1,7 @@
 package com.kingstek.companion.utils
 
 import com.kingstek.companion.R
-import com.kingstek.companion.dummy_data.HomeModel
+import com.kingstek.companion.models.utils_model.HomeModel
 
 class DataUtils {
 

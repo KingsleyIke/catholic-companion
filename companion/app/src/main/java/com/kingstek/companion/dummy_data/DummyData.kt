@@ -1,6 +1,7 @@
 package com.kingstek.companion.dummy_data
 
 import com.kingstek.companion.R
+import com.kingstek.companion.models.parish.*
 import java.util.*
 import kotlin.collections.ArrayList
 

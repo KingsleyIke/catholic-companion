@@ -1,4 +1,4 @@
-package com.kingstek.companion.models
+package com.kingstek.companion.models.user
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
