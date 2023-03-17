@@ -1,4 +1,4 @@
-package com.kingstek.companion.models
+package com.kingstek.companion.models.user
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
@@ -13,5 +13,6 @@ data class User (
         val image: String = "",
         val mobile: Long = 0,
         val gender: String = "",
-        val profileCompleted: Int = 0
+        val profileCompleted: Int = 0,
+        val admin: Boolean
         ) : Parcelable

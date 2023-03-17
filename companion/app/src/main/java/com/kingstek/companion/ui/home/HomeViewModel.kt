@@ -2,7 +2,7 @@ package com.kingstek.companion.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.kingstek.companion.dummy_data.HomeModel
+import com.kingstek.companion.models.utils_model.HomeModel
 import com.kingstek.companion.ui.BaseViewModel
 import com.kingstek.companion.utils.DataUtils
 

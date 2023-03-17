@@ -1,4 +1,4 @@
-package com.kingstek.companion.dummy_data
+package com.kingstek.companion.models.utils_model
 
 data class HomeModel(
     val homeText: String?,
