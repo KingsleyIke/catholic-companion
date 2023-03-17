@@ -29,6 +29,7 @@ import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.libraries.places.api.Places
 import com.google.android.libraries.places.api.model.Place
+import com.google.android.libraries.places.api.net.FetchPlaceResponse
 import com.google.android.libraries.places.api.net.FindCurrentPlaceRequest
 import com.google.android.libraries.places.api.net.PlacesClient
 import com.kingstek.companion.BuildConfig
@@ -114,7 +115,7 @@ class MapsFragment : Fragment() {
         // Construct a FusedLocationProviderClient.
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(requireActivity())
 
-        showCurrentPlace()
+//        showCurrentPlace()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -160,6 +161,8 @@ class MapsFragment : Fragment() {
 
         // Get the current location of the device and set the position of the map.
         getDeviceLocation()
+
+        showCurrentPlace()
     }
 
     // [START maps_current_place_location_permission]
@@ -272,9 +275,11 @@ class MapsFragment : Fragment() {
         if (locationPermissionGranted) {
             // Use fields to define the data types to return.
             val placeFields = listOf(Place.Field.NAME, Place.Field.ADDRESS, Place.Field.LAT_LNG)
+//            val placeFieldsChurch = listOf(Place.Field.NAME, Place.Field.ADDRESS, Place.Field.)
 
             // Use the builder to create a FindCurrentPlaceRequest.
             val request = FindCurrentPlaceRequest.newInstance(placeFields)
+//            val requestChurch = FetchPlaceResponse.newInstance()
 
             // Get the likely places - that is, the businesses and other points of interest that
             // are the best match for the device's current location.
@@ -305,6 +310,11 @@ class MapsFragment : Fragment() {
                             break
                         }
                     }
+
+                    Log.d("Likelyplace", likelyPlaces.toString())
+                    Log.d("LikelyplaceNames", likelyPlaceNames.toString())
+                    Log.d("likelyPlaceAddresses", likelyPlaceAddresses.toString())
+                    Log.d("likelyPlaceAttributions", likelyPlaceAttributions.toString())
 
                     // Show a dialog offering the user the list of likely places, and add a
                     // marker at the selected place.
@@ -361,5 +371,148 @@ class MapsFragment : Fragment() {
             .setTitle(R.string.pick_place)
             .setItems(likelyPlaceNames, listener)
             .show()
+    }
+
+//    fun setChurches() {
+//        val type = "place_of_worship"
+//        val radius = 5000 // 5 kilometers
+//
+//        val result = Places.PlaceDetectionApi.getCurrentPlace(mGoogleApiClient, null)
+//        result.setResultCallback { likelyPlaces ->
+//            for (placeLikelihood in likelyPlaces) {
+//                val place = placeLikelihood.place
+//                if (place.types.contains(type)) {
+//                    val latLng = place.latLng
+//                    val name = place.name.toString()
+//                    val address = place.address.toString()
+//
+//                    val markerOptions = MarkerOptions()
+//                        .position(latLng)
+//                        .title(name)
+//                        .snippet(address)
+//
+//                    mGoogleMap.addMarker(markerOptions)
+//                }
+//            }
+//
+//            likelyPlaces.release()
+//        }
+//    }
+
+//    fun churches(current: LatLng) {
+//        val placesClient = Places.createClient(requireContext())
+//        val nearbySearchRequest = NearbySearchRequest()
+//            .location(currentLocation)
+//            .radius(5000) // Search radius in meters
+//            .typeFilter(TypeFilter().add(TypeFilter.TYPE_PLACE_OF_WORSHIP))
+//        placesClient.nearbySearch(nearbySearchRequest, object : ResultCallback<NearbySearchResponse> {
+//            override fun onResult(response: NearbySearchResponse?) {
+//                response ?: return
+//                if (response.status.isSuccess()) {
+//                    for (result in response.results) {
+//                        val churchLocation =
+//                            LatLng(result.geometry.location.lat, result.geometry.location.lng)
+//                        val marker = map.addMarker(
+//                            MarkerOptions()
+//                                .position(churchLocation)
+//                                .title(result.name)
+//                        )
+//                    }
+//                }
+//            }
+//
+//            override fun onFailure(e: Exception) {
+//            }
+//
+//        }
+//
+//    }
+
+//    fun church() {
+//        val placesClient = Places.createClient(context)
+//
+//// Define the latitude and longitude of the center point of the search area
+//        val location = LatLng(37.7749, -122.4194)
+//
+//// Define the radius of the search area in meters
+//        val radius = 5000
+//
+//// Set the type of place you want to search for
+//        val type = Place.Type.CHURCH
+//
+//// Create a new NearbySearchRequest
+//        val request = NearbySearchRequest.builder()
+//            .location(location)
+//            .radius(radius)
+//            .type(type)
+//            .build()
+//
+//// Call the Places API to perform the search
+//        placesClient.nearbySearch(request).addOnSuccessListener { response ->
+//            // Process the search results
+//            for (place in response.results) {
+//                // Access the details of each place
+//                val name = place.name
+//                val address = place.address
+//                val rating = place.rating
+//                val location = place.latLng
+//                // ...
+//            }
+//        }.addOnFailureListener { exception ->
+//            // Handle any errors that occurred
+//            Log.e(TAG, "Nearby search failed: ${exception.message}")
+//        }
+//    }
+
+    fun searchParishes() {
+        // Declare a lateinit var for the GoogleMap object
+//         lateinit var mMap: GoogleMap
+
+// Initialize the MapView and set the API key
+//        val mapView = findViewById(R.id.map_view) as MapView
+//        mapView.onCreate(savedInstanceState)
+//        mapView.getMapAsync { googleMap ->
+//            mMap = googleMap
+//            mMap.setMyLocationEnabled(true)
+//            mMap.uiSettings.isMyLocationButtonEnabled = true
+//
+//            // Set the camera position to the user's current location
+//            val location = mMap.myLocation
+//            if (location != null) {
+//                val latLng = LatLng(location.latitude, location.longitude)
+//                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f))
+//            }
+//        }
+
+// Initialize the PlacesClient
+
+//        Places.initialize(applicationContext, apiKey)
+//        val placesClient = Places.createClient(this)
+//
+//// Search for nearby churches
+//        val type = "church"
+//        val radius = 10000 // 10 km
+//        val location = map?.myLocation
+//        if (location != null) {
+//            val latLng = LatLng(location.latitude, location.longitude)
+//            val fields = listOf(Place.Field.ID, Place.Field.NAME, Place.Field.LAT_LNG)
+//            val request = FindPlaceRequest.newInstance("$latLng", FindPlaceRequest.FieldMask.ALL_FIELDS)
+//            val task = placesClient.findPlace(request)
+//            task.addOnSuccessListener { response ->
+//                for (place in response.placeLikelihoods) {
+//                    if (place.place.types.contains(type)) {
+//                        val latLng = place.place.latLng
+//                        val name = place.place.name
+//                        val markerOptions = MarkerOptions()
+//                            .position(latLng!!)
+//                            .title(name!!)
+//                        map.addMarker(markerOptions)
+//                    }
+//                }
+//            }
+//        }
+
+
+
     }
 }
