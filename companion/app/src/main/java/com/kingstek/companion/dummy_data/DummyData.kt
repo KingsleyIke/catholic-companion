@@ -225,6 +225,6 @@ class DummyData {
         p1,
     )
 
-    val parishListSpinner: ArrayList<String> = arrayListOf("Parish One", "Parish Two", "Parish Four")
+    val parishListSpinner: ArrayList<String> = arrayListOf("Select Parish", "Parish One", "Parish Two", "Parish Four")
 
 }

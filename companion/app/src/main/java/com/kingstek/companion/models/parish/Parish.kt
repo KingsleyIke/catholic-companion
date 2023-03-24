@@ -1,12 +1,14 @@
 package com.kingstek.companion.models.parish
 
 import android.os.Parcelable
+import com.kingstek.companion.models.user.User
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Parish(
     val id: String,
-    val adminApproval: String,
+    val createdBy: String,
+    val approvedBy: User,
     val name: String?,
     val address: String?,
     val website : String?,
@@ -20,5 +22,5 @@ data class Parish(
     val churchAnnouncements: List<Announcement>?,
     val parishGallery: List<ParishGalleryModel>?,
     val approved: Int?,
-    val lastupdate: UpdateDetails?
+    val lastUpdate: UpdateDetails?
 ) : Parcelable

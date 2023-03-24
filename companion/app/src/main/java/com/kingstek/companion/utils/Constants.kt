@@ -20,5 +20,6 @@ object Constants {
     val TAG = MapsFragment::class.java.simpleName
 
     const val USERS: String = "users"
+    const val DIOCESE: String = "diocese"
 
 }

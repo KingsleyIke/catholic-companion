@@ -112,6 +112,15 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_parish_name" />
 
+            <TextView
+                android:id="@+id/tv_parish_website"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="54dp"
+                android:textColor="@color/main_color_dark"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_parish_address" />
+
             <View
                 android:id="@+id/line_seperatore_one"
                 android:layout_width="match_parent"
@@ -120,7 +129,7 @@
                 android:background="@color/main_color_dark"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_parish_address" />
+                app:layout_constraintTop_toBottomOf="@id/tv_parish_website" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/ct_mass_pastoral"

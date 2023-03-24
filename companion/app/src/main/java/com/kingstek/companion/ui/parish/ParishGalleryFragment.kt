@@ -17,6 +17,7 @@ import com.kingstek.companion.onItemClickListener
 class ParishGalleryFragment : Fragment() {
 
     //TODO gliding recylcer view for images with headings or details page for each gallery
+    //Todo display parish name when coming from a particular parish page, display no parish name is new addition is seleceted
 
     private var _binding: FragmentParishGalleryBinding? = null
     private val binding get() = _binding!!
@@ -38,7 +39,7 @@ class ParishGalleryFragment : Fragment() {
 
         val parishGalleryRecyclerView = binding.rvGalleryRecyclerView
 
-        val parishGalleryAdapter = ParishGalleryAdapter( parishGalleryViewModel.parishList.value?.get(position)?.parishGalerry!!, object : onItemClickListener {
+        val parishGalleryAdapter = ParishGalleryAdapter( parishGalleryViewModel.parishList.value?.get(position)?.parishGallery!!, object : onItemClickListener {
             override fun onItemClicked(position: Int, view: View) {
                 //TODO("Not yet implemented")
             }

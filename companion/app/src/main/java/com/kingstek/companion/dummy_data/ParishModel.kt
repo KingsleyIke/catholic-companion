@@ -13,5 +13,5 @@ data class ParishModel(
     val pastoralTeam: List<PastoralTeam>?,
     val churchActivities: List<Activities>?,
     val churchAnnouncements: List<Announcement>?,
-    val parishGalerry: List<ParishGalleryModel>?
+    val parishGallery: List<ParishGalleryModel>?
     )
