@@ -14,7 +14,7 @@ data class Parish(
     val website : String?,
     val deanery: String?,
     val diocese: String?,
-    val parishImage: List<Int>?,
+    val parishImage: List<ImageModel>?,
     val sundayMass: List<String>?,
     val weekDayMass: List<WeekMasses>?,
     val pastoralTeam: List<PastoralTeam>?,
