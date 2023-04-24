@@ -27,8 +27,6 @@ o
 ?app/src/main/java/com/kingstek/companion/ui/home/HomeAdapter.kt,9/1/91e7232893f725ff191b8869fe76bebda9636831
 o
 ?app/src/main/java/com/kingstek/companion/OnItemClickListener.kt,9/d/9d76366c31f5afdc2c5094935d18d73c77139271
-s
-Capp/src/main/java/com/kingstek/companion/utils/MenuItemsConstans.kt,2/8/2819f09fa0ceb05354bc12e45fbd0c0c071e8d04
 p
 @app/src/main/java/com/kingstek/companion/ui/home/HomeFragment.kt,1/c/1c2e227503da93a02496299a1b602de6daf897ac
 |
@@ -46,12 +44,8 @@ Dapp/src/main/java/com/kingstek/companion/ui/location/MapsFragment.kt,7/8/78f37
 build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
 z
 Japp/src/main/java/com/kingstek/companion/ui/parish/ParishGalleryAdapter.kt,0/5/0587a0b05bca4f11cd59651c2bfca247f4712656
-p
-@app/src/main/java/com/kingstek/companion/dummy_data/NewsModel.kt,0/2/02d683f5a41851cf2e7db992767ff436564e854e
 |
 Lapp/src/main/java/com/kingstek/companion/ui/parish/ParishGalleryViewModel.kt,3/4/34c8bcb6d590158f29132afbd415af0166fda236
-|
-Lapp/src/main/java/com/kingstek/companion/ui/authentication/SignUpFragment.kt,3/0/30f30eeeb972f2586ad62e58989d784a124bf193
 …
 Uapp/src/main/java/com/kingstek/companion/ui/authentication/ForgetPasswordViewModel.kt,7/6/76d60efc8ba8fe72d2c4aee2b34060ed6bb23a36
 „
@@ -68,19 +62,11 @@ t
 Dapp/src/main/java/com/kingstek/companion/ui/parish/ParishFragment.kt,8/f/8fbfff81230dc1faf83419a76827a880aa4aa1a3
 r
 Bapp/src/main/java/com/kingstek/companion/models/diocese/Diocese.kt,4/a/4adabbd120ae32a1fb201ceca3f8699b9942dd8d
-p
-@app/src/main/java/com/kingstek/companion/dummy_data/DummyData.kt,4/1/418dc5bf3398e46ecda44cf63c3a8429990ef8d3
-k
-;app/src/main/java/com/kingstek/companion/ui/HomeActivity.kt,d/9/d96554d190a70ba852a495182128e7516b5edbd6
 {
 Kapp/src/main/java/com/kingstek/companion/ui/parish/ParishGalleryFragment.kt,5/2/5235f2731fac1a458bd14d84ce4ff846504f34a1
 u
 Eapp/src/main/java/com/kingstek/companion/ui/parish/ParishViewModel.kt,d/1/d14908962cb69e765102e99355929d3d8e1ba43e
-}
-Mapp/src/main/java/com/kingstek/companion/ui/authentication/SignUpViewModel.kt,8/b/8bf3e4ca29e631e1ffbba00ee9e6e5c7efe9b78d
 ƒ
 Sapp/src/main/java/com/kingstek/companion/ui/parish/updates/UpdateGalleryFragment.kt,9/e/9ece07e00dc9c23b9e3cfd530d86f7efa6a8bf5c
 l
 <app/src/main/java/com/kingstek/companion/models/user/User.kt,6/b/6b775c09a9670aac80b8cf4cdedbc0eb61ad29f7
-l
-<app/src/main/java/com/kingstek/companion/ui/BaseViewModel.kt,7/3/73c9d95d104ea0a9f73f60f83f7607237eedfb37

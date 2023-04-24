@@ -138,6 +138,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="text"
+                    android:focusable="false"
                     android:textColor="@color/white"
                     android:background="@drawable/backround_rounded_darker_light_color_update_screen"
                     />
@@ -165,6 +166,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="text"
+                    android:focusable="false"
                     android:textColor="@color/white"
                     android:background="@drawable/backround_rounded_darker_light_color_update_screen"
                     />
@@ -469,6 +471,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
+                android:id="@+id/btn_publish"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"

@@ -38,7 +38,7 @@ class HomeActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this)[BaseViewModel::class.java]
         viewModel.isUserSignedIn()
-        viewModel.getDioceseList()
+//        viewModel.getDioceseList()
 //        viewModel.pushdioces()
 
         /**

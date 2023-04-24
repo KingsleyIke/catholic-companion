@@ -15,18 +15,22 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kingstek.companion.databinding.FragmentUpdateParishInfoBinding
 import com.kingstek.companion.models.parish.ImageModel
+import com.kingstek.companion.models.parish.Parish
 import com.kingstek.companion.models.parish.PastoralTeam
 import com.kingstek.companion.onItemClickListener
-import java.net.URI
+import kotlinx.coroutines.launch
 
 
 class UpdateParishInfoFragment : Fragment() {
@@ -55,10 +59,11 @@ class UpdateParishInfoFragment : Fragment() {
         }
 
         /**
-         * ParishList Spiner
+         * ParishList Spinner
          */
+        //todo only set parish list spinner when selecting update parish info
+        //todo set parish coming from as default selected spinner value
         val parishSpinner: Spinner = binding.spParishListSpinner
-        val timeSpinner: Spinner = binding.spParishListSpinner
 
         binding.etParishName.setOnClickListener{
             binding.spParishListSpinner.performClick()
@@ -93,46 +98,83 @@ class UpdateParishInfoFragment : Fragment() {
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         parishSpinner.adapter = dataAdapter
 
-        timeSpinner.adapter = dataAdapter
-
 
         /**
-         * Pastoral team setup
+         * Deanery list Spinner
          */
-        fun validatePastoralTeam(): Boolean {
 
-            if(binding.etTitle.text?.isEmpty()!!) {
-                binding.tilTitle.error = "Field must not be empty"
-                return false
+        val deanerySpinner: Spinner = binding.spDeaneryListSpinner
+
+        binding.etDeanery.setOnClickListener {
+            binding.spDeaneryListSpinner.performClick()
+        }
+
+        binding.spDeaneryListSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                val selected = parent?.getItemAtPosition(position).toString()
+                val editable = Editable.Factory.getInstance().newEditable(selected)
+                binding.etDeanery.text = editable
             }
 
-            binding.tilTitle.error = null
-
-            if(binding.etName.text?.isEmpty()!!) {
-                binding.tilName.error = "Field must not be empty"
-                return false
-            }
-
-            binding.tilName.error = null
-
-            if(binding.etPosition.text?.isEmpty()!!) {
-                binding.tilPosition.error = "Field must not be empty"
-                return false
-            }
-
-            binding.tilPosition.error = null
-
-            if(binding.etPhoneNumber.text?.isEmpty()!!) {
-                binding.tilPhonenumber.error = "Field must not be empty"
-                return false
-            }
-
-            binding.tilPhonenumber.error = null
-
-            return true
+            override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
 
 
+        lifecycleScope.launch {
+            try {
+
+                var deanList: List<String> = viewModel.getDeanaryList()
+
+                val deaneryAdapter: ArrayAdapter<String> = ArrayAdapter(
+                    requireContext(),
+                    android.R.layout.simple_spinner_item,
+                    deanList
+                )
+
+                deaneryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                deanerySpinner.adapter = deaneryAdapter
+
+            } catch (e:Exception) {
+                e.printStackTrace()
+            }
+        }
+
+        /**
+         * Diocese list Spinner
+         */
+
+        //todo setup dioces spiner and filter deanery spiner based on selectedt diocese
+        val dioceseSpinner: Spinner = binding.spDioceseListSpinner
+
+        binding.etDiocese.setOnClickListener {
+            binding.spDioceseListSpinner.performClick()
+        }
+
+        binding.spDioceseListSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                val selectedItem = parent?.getItemAtPosition(position).toString()
+                val editable = Editable.Factory.getInstance().newEditable(selectedItem)
+                binding.etDiocese.text = editable
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {}
+
+        }
+
+        val diocesesAdapter: ArrayAdapter<String> = ArrayAdapter(
+            requireContext(),
+            android.R.layout.simple_spinner_item,
+            viewModel.dioceseListSpinner.value!!
+        )
+
+        diocesesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        dioceseSpinner.adapter = diocesesAdapter
+
+
+
+        /**
+         * Setup Pastoral team recycler vieww
+         */
         viewModel.initilaizePastorlTeam()
 
         val pastoralRecyclerView = binding.rvPastoralTeam
@@ -234,7 +276,6 @@ class UpdateParishInfoFragment : Fragment() {
             binding.etImageTitle.error = null
         }
 
-
         binding.tvImagesDoneBtn.setOnClickListener {
             binding.ltParishImages.visibility = View.GONE
         }
@@ -243,15 +284,124 @@ class UpdateParishInfoFragment : Fragment() {
             pickImage()
         }
 
-        /**
-         * run validation on all values
-         */
-        fun validateParishValues(): Boolean{
+        //todo use alert dialogs to add images and pastoral team
+        binding.btnPublish.setOnClickListener {
+
+            if (!validateParishValues()) {
+                Toast.makeText(requireContext(), "All required fields not filled", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            setValues()
+
+            viewModel.getParishImageListUrl().observe(viewLifecycleOwner, Observer {
+                setValues()
+            })
+
+            viewModel.uploadParishInfo(requireContext())
+
+//            setValues()
+        }
+
+        return root
+    }
+
+
+    fun setValues() {
+
+        viewModel.parishModel.postValue(
+            Parish(parishName = binding.etParishName.text.toString(),
+                address = binding.etParishAddress.text.toString(),
+                website = binding.etParishWebsite.text.toString(),
+                diocese = binding.etDiocese.text.toString(),
+                deanery = binding.etDeanery.text.toString(),
+                pastoralTeam = viewModel.getPastoralList().value,
+                parishImage = viewModel.getParishImageListUrl().value,
+                createdBy = viewModel.currentUser.toString()
+            ))
+
+    }
+
+    /**
+     * run validation on all values
+     */
+    fun validateParishValues(): Boolean{
+
+        if(binding.etParishName.text?.isEmpty()!!) {
+            binding.tilParishName.error = "Field must not be empty"
+            return false
+        }
+        binding.tilParishName.error = null
+
+
+        if(binding.etParishAddress.text?.isEmpty()!!) {
+            binding.tilParishAddress.error = "Field must not be empty"
+            return false
+        }
+        binding.tilParishAddress.error = null
+
+
+        if(binding.etDiocese.text?.isEmpty()!!) {
+            binding.tilDiocese.error = "Field must not be empty"
+            return false
+        }
+        binding.tilDiocese.error = null
+
+
+        if(binding.etDeanery.text?.isEmpty()!!) {
+            binding.tilDeanery.error = "Field must not be empty"
+            return false
+        }
+        binding.tilDeanery.error = null
+
+        if (viewModel.getPastoralList().value == null || viewModel.getPastoralList().value!!.isEmpty()) {
+            Toast.makeText(requireContext(), "Add at least one Pastoral team member", Toast.LENGTH_SHORT).show()
 
             return false
         }
 
-        return root
+        if (viewModel.getParishImageList().value == null || viewModel.getParishImageList().value!!.isEmpty()) {
+            Toast.makeText(requireContext(), "Add at least one Parish Image ", Toast.LENGTH_SHORT).show()
+            return false
+        }
+
+            return true
+    }
+
+    /**
+     * Pastoral team setup
+     */
+    fun validatePastoralTeam(): Boolean {
+
+        if(binding.etTitle.text?.isEmpty()!!) {
+            binding.tilTitle.error = "Field must not be empty"
+            return false
+        }
+
+        binding.tilTitle.error = null
+
+        if(binding.etName.text?.isEmpty()!!) {
+            binding.tilName.error = "Field must not be empty"
+            return false
+        }
+
+        binding.tilName.error = null
+
+        if(binding.etPosition.text?.isEmpty()!!) {
+            binding.tilPosition.error = "Field must not be empty"
+            return false
+        }
+
+        binding.tilPosition.error = null
+
+        if(binding.etPhoneNumber.text?.isEmpty()!!) {
+            binding.tilPhonenumber.error = "Field must not be empty"
+            return false
+        }
+
+        binding.tilPhonenumber.error = null
+
+        return true
     }
 
     private fun pickImage() {
@@ -286,7 +436,7 @@ class UpdateParishInfoFragment : Fragment() {
     fun requestPermissionForReadExtertalStorage() {
         try {
             ActivityCompat.requestPermissions(
-                (this as Activity), arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
+                (requireActivity()), arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
                 25
             )
         } catch (e: Exception) {

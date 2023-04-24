@@ -33,7 +33,7 @@ class ParishImageAdapter(val imageList: LiveData<ArrayList<ImageModel>>, val mLi
         title.text = imageList?.title
 
         val image = holder.image
-        val uri: Uri? = imageList?.image
+        val uri: Uri? = imageList?.imageUri
         val bitmap = MediaStore.Images.Media.getBitmap(context?.contentResolver, uri)
         image.setImageBitmap(bitmap)
     }

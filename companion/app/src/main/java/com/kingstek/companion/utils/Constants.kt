@@ -21,5 +21,6 @@ object Constants {
 
     const val USERS: String = "users"
     const val DIOCESE: String = "diocese"
+    const val PARISH: String = "parish"
 
 }

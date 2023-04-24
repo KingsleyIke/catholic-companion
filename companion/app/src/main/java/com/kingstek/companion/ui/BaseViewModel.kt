@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
+import com.google.firebase.storage.FirebaseStorage
 import com.kingstek.companion.dummy_data.DummyData
 import com.kingstek.companion.dummy_data.NewsModel
 import com.kingstek.companion.dummy_data.ParishModel
@@ -19,6 +20,7 @@ open class BaseViewModel : ViewModel() {
 
 
     val mFirestore = FirebaseFirestore.getInstance()
+    val mStorageRef = FirebaseStorage.getInstance().reference
     val firebaseAuth = FirebaseAuth.getInstance()
     val currentUser = firebaseAuth.currentUser
 
@@ -33,6 +35,15 @@ open class BaseViewModel : ViewModel() {
     private val _loggegIn = MutableLiveData<Boolean>()
     val loggegIn: MutableLiveData<Boolean>
         get() = _loggegIn
+
+    private val _diocesName = MutableLiveData<String>()
+    val diocesName: MutableLiveData<String>
+        get() = _diocesName
+
+    private val _deaneryList = MutableLiveData<List<String>>()
+    val deaneryList: MutableLiveData<List<String>>
+        get() = _deaneryList
+
 
     val data = DummyData()
 
@@ -70,13 +81,19 @@ open class BaseViewModel : ViewModel() {
         mFirestore.collection(Constants.DIOCESE)
             .get()
             .addOnSuccessListener {
+                diocesName.value = it.documents[0].data?.get("dioceseName") as String
+                deaneryList.value = it.documents[0].data?.get("dioceseList") as List<String>
+
+                Log.d("resulting deanery", deaneryList.value.toString())
                 Log.d("resulting dioses", it.documents.toString())
                 Log.d("resulting dioses", it.documents.get(0).id)
                 Log.d("resulting dioses", it.documents.get(0).data.toString())
+                Log.d("resulting dioses", it.documents.get(0).data?.get("dioceseList").toString())
             }
             .addOnFailureListener {
                 Log.d("ERROR DOCESES", it.message.toString(), it)
             }
+        Log.d("end test", "endsss")
     }
 
     fun pushdioces() {

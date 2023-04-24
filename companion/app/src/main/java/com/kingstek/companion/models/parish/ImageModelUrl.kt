@@ -5,7 +5,7 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class ImageModel(
-    val imageUri: Uri,
+data class ImageModelUrl(
+    val imageUri: String,
     val title: String,
 ): Parcelable
