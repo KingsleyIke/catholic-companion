@@ -50,6 +50,11 @@ class UpdateParishInfoViewModel : BaseViewModel() {
 //    val deanery: MutableLiveData<String>
 //        get() = _deanery
 
+    private val _isUpdateOrNew = MutableLiveData<Boolean>()
+    val isUpdateOrNew: MutableLiveData<Boolean>
+        get() = _isUpdateOrNew
+
+
     private val _parishModel = MutableLiveData<Parish>()
     val parishModel: MutableLiveData<Parish>
         get() = _parishModel
