@@ -116,7 +116,6 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-<!--            todo chnage text select to enter if user is adding new parish or updating-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_diocese"
                 android:layout_width="match_parent"
@@ -195,95 +194,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-            <LinearLayout
-                android:id="@+id/lt_pastoral_team"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:orientation="vertical">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/til_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColorHint="@color/white"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/backround_rounded_darker_light_color_update_screen"
-                    android:hint="Enter Title (eg. Rev Fr, Mr, Mrs, Sir)">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/et_title"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:inputType="text"
-                        android:textColor="@color/white"
-                        android:background="@drawable/backround_rounded_darker_light_color_update_screen"
-                        />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/til_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColorHint="@color/white"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/backround_rounded_darker_light_color_update_screen"
-                    android:hint="Enter Name">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/et_name"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:inputType="text"
-                        android:textColor="@color/white"
-                        android:background="@drawable/backround_rounded_darker_light_color_update_screen"
-                        />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/til_position"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColorHint="@color/white"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/backround_rounded_darker_light_color_update_screen"
-                    android:hint="Enter Position (eg. Parish Priest, Catechist)">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/et_position"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:inputType="text"
-                        android:textColor="@color/white"
-                        android:background="@drawable/backround_rounded_darker_light_color_update_screen"
-                        />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/til_phonenumber"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColorHint="@color/white"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/backround_rounded_darker_light_color_update_screen"
-                    android:hint="Phone Number">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/et_phoneNumber"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:inputType="phone"
-                        android:textColor="@color/white"
-                        android:background="@drawable/backround_rounded_darker_light_color_update_screen"
-                        />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -308,33 +218,13 @@
                     android:paddingTop="10dp"
                     android:paddingEnd="20dp"
                     android:paddingBottom="10dp"
-                    android:text="Add"
-                    android:textColor="@color/main_color_dark"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline1"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/tv_done_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="@drawable/backround_rounded_white"
-                    android:elevation="20dp"
-                    android:paddingStart="20dp"
-                    android:paddingTop="10dp"
-                    android:paddingEnd="20dp"
-                    android:paddingBottom="10dp"
-                    android:text="Done"
+                    android:text="Add Pastoral team member"
                     android:textColor="@color/main_color_dark"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/guideline1"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <View
@@ -355,15 +245,11 @@
                 android:text="Add Parish image"
                 android:textColor="@color/main_color_light_dark"/>
 
-<!--            <androidx.recyclerview.widget.RecyclerView-->
-<!--                android:id="@+id/rv_parish_image"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"/>-->
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_parish_images"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+
             <LinearLayout
                 android:id="@+id/lt_parish_images"
                 android:layout_width="match_parent"
@@ -432,33 +318,13 @@
                     android:paddingTop="10dp"
                     android:paddingEnd="20dp"
                     android:paddingBottom="10dp"
-                    android:text="Add"
-                    android:textColor="@color/main_color_dark"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/tv_images_done_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="@drawable/backround_rounded_white"
-                    android:elevation="20dp"
-                    android:paddingStart="20dp"
-                    android:paddingTop="10dp"
-                    android:paddingEnd="20dp"
-                    android:paddingBottom="10dp"
-                    android:text="Done"
+                    android:text="Add Parish Images"
                     android:textColor="@color/main_color_dark"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <View
