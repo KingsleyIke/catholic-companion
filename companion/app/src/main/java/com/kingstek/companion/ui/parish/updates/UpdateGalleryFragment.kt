@@ -1,4 +1,4 @@
-package com.kingstek.companion.ui.parish
+package com.kingstek.companion.ui.parish.updates
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

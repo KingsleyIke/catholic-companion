@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.parish.UpdateParishInfoFragment"
+    tools:context=".ui.parish.updates.UpdateParishInfoFragment"
     android:padding="5dp"
     android:orientation="vertical">
 
@@ -43,169 +43,435 @@
                     android:text="@string/new_addition"
                     />
             </RadioGroup>
-
-            <TextView
-                android:id="@+id/error_msg_radio_group"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Select at least one option"
-                android:textColor="@color/main_color_light_dark"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal"
-                android:background="@drawable/backround_rounded_darker_light_color_update_screen"
-                >
-                <!--        todo find a way to add corner radius to spinner without linera layout-->
-
-                <androidx.appcompat.widget.AppCompatSpinner
-                    android:id="@+id/parish_spinner"
-                    android:layout_height="wrap_content"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_parish_name"
                     android:layout_width="match_parent"
-                    style="@style/SpinnerStyle"
-                    />
-
-            </LinearLayout>
-            <TextView
-                android:id="@+id/error_msg_parish_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Parish must be selected"
-                android:textColor="@color/main_color_light_dark"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:padding="10dp"
-                android:orientation="horizontal"
-                android:background="@drawable/backround_rounded_darker_light_color_update_screen"
-                >
-
-                <androidx.appcompat.widget.AppCompatSpinner
-                    android:id="@+id/category_spinner"
                     android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
-                    style="@style/SpinnerStyle"
-                    />
-
-            </LinearLayout>
-            <TextView
-                android:id="@+id/error_msg_category_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Category must be selected"
-                android:textColor="@color/main_color_light_dark"/>
-
-            <EditText
-                android:id="@+id/tv_update_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:layout_marginTop="15dp"
-                android:hint="Title"
-                android:textColorHint="@color/gray"
-                android:background="@drawable/backround_rounded_darker_light_color_update_screen"
-                />
-            <TextView
-                android:id="@+id/error_msg_title_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Update must have a title"
-                android:textColor="@color/main_color_light_dark"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal"
-                android:weightSum="6"
-                >
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:padding="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_weight="5.5"
+                    android:textColorHint="@color/white"
                     android:background="@drawable/backround_rounded_darker_light_color_update_screen"
+                    app:errorTextColor="@color/gray"
+                    android:hint="Parish Name *"
                     >
+
                     <androidx.appcompat.widget.AppCompatSpinner
-                        android:id="@+id/time_spinner"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/sp_parish_list_spinner"
+                        android:layout_height="0dp"
                         android:layout_width="match_parent"
-                        style="@style/SpinnerStyle"
+                        android:background="@drawable/backround_rounded_darker_light_color_update_screen"
                         />
-                </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/et_parish_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:inputType="text"
+                        android:textCursorDrawable="@null"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/gray"
+                        android:background="@drawable/backround_rounded_darker_light_color_update_screen" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_parish_address"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColorHint="@color/white"
+                android:layout_marginTop="10dp"
+                app:errorTextColor="@color/gray"
+                android:background="@drawable/backround_rounded_darker_light_color_update_screen"
+                android:hint="Enter Address *">
+
+                <EditText
+                    android:id="@+id/et_parish_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:textColor="@color/white"
+                    android:background="@drawable/backround_rounded_darker_light_color_update_screen"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_parish_website"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColorHint="@color/white"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/backround_rounded_darker_light_color_update_screen"
+                android:hint="Enter Parish Website">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_parish_website"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:textColor="@color/white"
+                    android:background="@drawable/backround_rounded_darker_light_color_update_screen"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+<!--            todo chnage text select to enter if user is adding new parish or updating-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_diocese"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColorHint="@color/white"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/backround_rounded_darker_light_color_update_screen"
+                android:hint="Select Diocese *">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/sp_diocese_list_spinner"
+                    android:layout_height="0dp"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/backround_rounded_darker_light_color_update_screen"
+                    />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_diocese"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    android:focusable="false"
+                    android:textColor="@color/white"
+                    android:background="@drawable/backround_rounded_darker_light_color_update_screen"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_deanery"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColorHint="@color/white"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/backround_rounded_darker_light_color_update_screen"
+                android:hint="Select Deanery *">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/sp_deanery_list_spinner"
+                    android:layout_height="0dp"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/backround_rounded_darker_light_color_update_screen"
+                    />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_deanery"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    android:focusable="false"
+                    android:textColor="@color/white"
+                    android:background="@drawable/backround_rounded_darker_light_color_update_screen"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:background="@color/dark_color_background"
+                android:layout_marginTop="5dp"
+                android:layout_height="2dp"/>
+
+            <TextView
+                android:id="@+id/pastoral_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="Add Pastoral Team"
+                android:textColor="@color/main_color_light_dark"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_pastoral_team"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:id="@+id/lt_pastoral_team"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColorHint="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/backround_rounded_darker_light_color_update_screen"
+                    android:hint="Enter Title (eg. Rev Fr, Mr, Mrs, Sir)">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        android:background="@drawable/backround_rounded_darker_light_color_update_screen"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColorHint="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/backround_rounded_darker_light_color_update_screen"
+                    android:hint="Enter Name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        android:background="@drawable/backround_rounded_darker_light_color_update_screen"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_position"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColorHint="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/backround_rounded_darker_light_color_update_screen"
+                    android:hint="Enter Position (eg. Parish Priest, Catechist)">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_position"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        android:background="@drawable/backround_rounded_darker_light_color_update_screen"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_phonenumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColorHint="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/backround_rounded_darker_light_color_update_screen"
+                    android:hint="Phone Number">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_phoneNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="phone"
+                        android:textColor="@color/white"
+                        android:background="@drawable/backround_rounded_darker_light_color_update_screen"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".50"
+                    />
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:id="@+id/tv_add_btn"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:layout_weight=".5"
-                    android:drawableRight="@drawable/ic_baseline_question_mark_24"
+                    android:layout_gravity="center"
+                    android:background="@drawable/backround_rounded_white"
+                    android:elevation="20dp"
+                    android:paddingStart="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="10dp"
+                    android:text="Add"
+                    android:textColor="@color/main_color_dark"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_done_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/backround_rounded_white"
+                    android:elevation="20dp"
+                    android:paddingStart="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="10dp"
+                    android:text="Done"
+                    android:textColor="@color/main_color_dark"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/dark_color_background"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_add_btn" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/images_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="Add Parish image"
+                android:textColor="@color/main_color_light_dark"/>
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/rv_parish_image"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"/>-->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_parish_images"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:id="@+id/lt_parish_images"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/iv_selected_image"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_menu_camera"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Click Image Icon to select picture"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_image_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColorHint="@color/white"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/backround_rounded_darker_light_color_update_screen"
-                    />
+                    android:hint="Enter Image Title">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_image_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        android:background="@drawable/backround_rounded_darker_light_color_update_screen"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
 
             </LinearLayout>
-            <TextView
-                android:id="@+id/error_msg_time_frame"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Select a time limit for update"
-                android:textColor="@color/main_color_light_dark"/>
 
-            <EditText
-                android:id="@+id/tv_update_information"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:layout_marginTop="15dp"
-                android:gravity="top"
-                android:hint="Add Your Update here"
-                android:textColorHint="@color/gray"
-                android:lines="7"
-                android:background="@drawable/backround_rounded_darker_light_color_update_screen"
-                />
-            <TextView
-                android:id="@+id/error_msg_information"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Parish must be selected"
-                android:textColor="@color/main_color_light_dark"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/tv_update_additional_info"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:layout_marginTop="15dp"
-                android:lines="4"
-                android:gravity="top"
-                android:hint="Please add and update information"
-                android:textColorHint="@color/gray"
-                android:background="@drawable/backround_rounded_darker_light_color_update_screen"
-                />
-            <TextView
-                android:id="@+id/error_msg_additional_info"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Please add and additional information"
-                android:textColor="@color/main_color_light_dark"/>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".50"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_images_add_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/backround_rounded_white"
+                    android:elevation="20dp"
+                    android:paddingStart="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="10dp"
+                    android:text="Add"
+                    android:textColor="@color/main_color_dark"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_images_done_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/backround_rounded_white"
+                    android:elevation="20dp"
+                    android:paddingStart="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="10dp"
+                    android:text="Done"
+                    android:textColor="@color/main_color_dark"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/dark_color_background"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_images_add_btn" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
+                android:id="@+id/btn_publish"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -224,7 +490,10 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="20dp"/>
+
         </LinearLayout>
+
     </ScrollView>
+
 
 </LinearLayout>

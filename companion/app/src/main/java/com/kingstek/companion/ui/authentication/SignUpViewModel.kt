@@ -57,7 +57,8 @@ class SignUpViewModel : BaseViewModel() {
                         firstName.value!!.trim {it <= ' '},
                         lastName.value!!.trim {it <= ' '},
                         userName.value!!.trim {it <= ' '},
-                        email.value!!.trim {it <= ' '}
+                        email.value!!.trim {it <= ' '},
+                        admin = false
                     )
 
                     registerUser(user)

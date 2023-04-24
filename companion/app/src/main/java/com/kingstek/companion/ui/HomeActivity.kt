@@ -1,4 +1,4 @@
-package com.kingstek.companion
+package com.kingstek.companion.ui
 
 import android.os.Bundle
 import android.view.Menu
@@ -16,11 +16,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.kingstek.companion.databinding.ActivityHomeBinding
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
-import com.kingstek.companion.ui.BaseViewModel
-import kotlin.properties.Delegates
+import com.kingstek.companion.R
 
 
 class HomeActivity : AppCompatActivity() {
@@ -42,6 +38,8 @@ class HomeActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this)[BaseViewModel::class.java]
         viewModel.isUserSignedIn()
+//        viewModel.getDioceseList()
+//        viewModel.pushdioces()
 
         /**
          * Set drawer layout navigation,

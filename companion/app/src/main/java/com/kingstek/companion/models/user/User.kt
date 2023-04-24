@@ -14,5 +14,5 @@ data class User (
         val mobile: Long = 0,
         val gender: String = "",
         val profileCompleted: Int = 0,
-        val admin: Boolean
+        val admin: Boolean?
         ) : Parcelable

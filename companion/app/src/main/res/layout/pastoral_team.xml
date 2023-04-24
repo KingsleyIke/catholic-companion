@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pastoral_team"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_pastoral_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/backround_rounded_dark_stroke"
+        android:padding="10dp"
+        android:layout_marginTop="5dp"
+        android:paddingBottom="10dp"
+        android:text="Rev Fr."
+        android:textColor="@color/main_color_dark"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_pastoral_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/backround_rounded_dark_stroke"
+        android:padding="10dp"
+        android:layout_marginTop="5dp"
+        android:paddingBottom="10dp"
+        android:text="Martin Uwakwe Martin Uwakwe Martin"
+        android:textColor="@color/main_color_dark"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tv_pastoral_title"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_pastoral_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/backround_rounded_dark_stroke"
+        android:padding="10dp"
+        android:paddingBottom="10dp"
+        android:text="Parish Priest"
+        android:textColor="@color/main_color_dark"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pastoral_title" />
+
+    <ImageView
+        android:id="@+id/iv_delete_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_pastoral_position"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_baseline_delete_24"
+        app:layout_constraintTop_toTopOf="@+id/tv_pastoral_position" />
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height=".5dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/dark_color_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_pastoral_position" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

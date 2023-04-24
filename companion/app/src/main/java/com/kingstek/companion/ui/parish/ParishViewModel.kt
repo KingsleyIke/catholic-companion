@@ -8,6 +8,7 @@ class ParishViewModel : BaseViewModel() {
 
     //todo only display parishes with aproved marked as yes
     //todo display parishes waiting for approval by admin
+
     private var _sortVisiblity = MutableLiveData<Boolean>(true)
     val sortVisiblity: LiveData<Boolean>
     get() = _sortVisiblity
