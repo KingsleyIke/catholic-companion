@@ -12,10 +12,7 @@ import com.google.android.gms.tasks.Tasks
 import com.google.firebase.firestore.SetOptions
 import com.kingstek.companion.dummy_data.DummyData
 import com.kingstek.companion.dummy_data.ParishModel
-import com.kingstek.companion.models.parish.ImageModel
-import com.kingstek.companion.models.parish.ImageModelUrl
-import com.kingstek.companion.models.parish.Parish
-import com.kingstek.companion.models.parish.PastoralTeam
+import com.kingstek.companion.models.parish.*
 import com.kingstek.companion.ui.BaseViewModel
 import com.kingstek.companion.utils.Constants
 import com.kingstek.companion.utils.Constants.PARISH
@@ -30,30 +27,9 @@ import kotlin.coroutines.suspendCoroutine
 
 class UpdateParishInfoViewModel : BaseViewModel() {
 
-//    private val _parishName =  MutableLiveData<String>()
-//    val parishName: MutableLiveData<String>
-//        get() = _parishName
-//
-//    private val _address =  MutableLiveData<String>()
-//    val address: MutableLiveData<String>
-//        get() = _address
-//
-//    private val _website =  MutableLiveData<String>()
-//    val website: MutableLiveData<String>
-//        get() = _website
-//
-//    private val _diocese =  MutableLiveData<String>()
-//    val diocese: MutableLiveData<String>
-//        get() = _diocese
-//
-//    private val _deanery =  MutableLiveData<String>()
-//    val deanery: MutableLiveData<String>
-//        get() = _deanery
-
     private val _isUpdateOrNew = MutableLiveData<Boolean>()
     val isUpdateOrNew: MutableLiveData<Boolean>
         get() = _isUpdateOrNew
-
 
     private val _parishModel = MutableLiveData<Parish>()
     val parishModel: MutableLiveData<Parish>
@@ -68,6 +44,9 @@ class UpdateParishInfoViewModel : BaseViewModel() {
         value = DummyData().dioceseListSpinner
     }
     val dioceseListSpinner = _dioceseListSpinner
+
+    private val uploadStatus = MutableLiveData<Boolean>()
+
 
     private val pastoralList = MutableLiveData<ArrayList<PastoralTeam>>()
 
@@ -89,6 +68,52 @@ class UpdateParishInfoViewModel : BaseViewModel() {
     fun removePastoralteam(position: Int) {
         pastoralList.value?.removeAt(position)
     }
+
+
+
+    private val sundayMassList = MutableLiveData<ArrayList<String>>()
+
+    fun initilaizeSundayMassList() {
+        val list = ArrayList<String>()
+        sundayMassList.value = list
+    }
+
+    fun addSundayMass(mass: String) {
+        val currenltList = sundayMassList.value ?: ArrayList()
+        currenltList.add(mass)
+        sundayMassList.value = currenltList
+    }
+
+    fun getSundayMassList(): LiveData<ArrayList<String>> {
+        return sundayMassList
+    }
+
+    fun removeSundayMassList(position: Int) {
+        sundayMassList.value?.removeAt(position)
+    }
+
+
+    private val weekDayMassList = MutableLiveData<ArrayList<WeekMasses>>()
+
+    fun initilaizeWeekdayMassList() {
+        val list = ArrayList<WeekMasses>()
+        weekDayMassList.value = list
+    }
+
+    fun addWeekDayMass(mass: WeekMasses) {
+        val currenltList = weekDayMassList.value ?: ArrayList()
+        currenltList.add(mass)
+        weekDayMassList.value = currenltList
+    }
+
+    fun getWeekDayMassList(): LiveData<ArrayList<WeekMasses>> {
+        return weekDayMassList
+    }
+
+    fun removeWeekDayMassList(position: Int) {
+        weekDayMassList.value?.removeAt(position)
+    }
+
 
     private val parishImageList = MutableLiveData<ArrayList<ImageModel>>()
 
@@ -203,13 +228,15 @@ class UpdateParishInfoViewModel : BaseViewModel() {
             .document(parishModel.value?.parishName!!)
             .set(parishModel, SetOptions.merge())
             .addOnSuccessListener {
-
+                uploadStatus.value = true
             }
             .addOnFailureListener {
+                uploadStatus.value = false
                 Log.d("ERROR PARISH", it.message.toString(), it)
             }
     }
 
+    fun getUploadStatus(): LiveData<Boolean> = uploadStatus
 
 
     suspend fun getDeanaryList(): List<String> = suspendCoroutine  { continuation ->

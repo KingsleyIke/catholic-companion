@@ -1,23 +1,17 @@
 package com.kingstek.companion.ui.parish.updates
 
 import android.Manifest
-import android.app.Activity
-import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.provider.MediaStore
 import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat.checkSelfPermission
-import androidx.core.graphics.green
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -25,9 +19,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kingstek.companion.R
 import com.kingstek.companion.databinding.FragmentUpdateParishInfoBinding
-import com.kingstek.companion.models.parish.ImageModel
 import com.kingstek.companion.models.parish.Parish
-import com.kingstek.companion.models.parish.PastoralTeam
 import com.kingstek.companion.onItemClickListener
 import kotlinx.coroutines.launch
 
@@ -193,20 +185,60 @@ class UpdateParishInfoFragment : Fragment() {
             }
         })
 
-
         pastoralRecyclerView.adapter = pastoralAdapter
         pastoralRecyclerView.layoutManager = LinearLayoutManager(context)
-
 
         /**
          * add edit views to pastoral team list that will be passed in when pushing parish details
          * toggles visibility of edit views for adding pastoral team details
          */
         binding.tvAddBtn.setOnClickListener {
-
             val dialogFragment = PastoralTeamDialog(viewModel, pastoralAdapter)
             dialogFragment.show(childFragmentManager, "pastoralDialog")
 
+        }
+
+        /**
+         * Sunday Mass setup
+         */
+        viewModel.initilaizeSundayMassList()
+
+        val sundayMassRecView = binding.rvSundayMass
+        val sundayMassAdapter = MassAdapter(viewModel.getSundayMassList(), null, object : onItemClickListener {
+            override fun onItemClicked(position: Int, view: View) {
+                viewModel.removeSundayMassList(position)
+            }
+
+        }, true)
+
+        sundayMassRecView.adapter = sundayMassAdapter
+        sundayMassRecView.layoutManager = LinearLayoutManager(context)
+
+        binding.sundayMassAddBtn.setOnClickListener {
+            val dialogFragment = MassDialog(viewModel, sundayMassAdapter, true)
+            dialogFragment.show(childFragmentManager, "sundayDialog")
+        }
+
+        /**
+         * Weekday Mass setup
+         */
+
+        viewModel.initilaizeWeekdayMassList()
+
+        val weekdayMassRecView = binding.rvWeekdayMass
+        val weekdayMassAdapter = MassAdapter(null, viewModel.getWeekDayMassList(), object : onItemClickListener {
+            override fun onItemClicked(position: Int, view: View) {
+                viewModel.removeWeekDayMassList(position)
+            }
+
+        }, false)
+
+        weekdayMassRecView.adapter = weekdayMassAdapter
+        weekdayMassRecView.layoutManager = LinearLayoutManager(context)
+
+        binding.weekdayMassAddBtn.setOnClickListener {
+            val dialogFragment = MassDialog(viewModel, weekdayMassAdapter, false)
+            dialogFragment.show(childFragmentManager, "sundayDialog")
         }
 
         /**
@@ -230,48 +262,17 @@ class UpdateParishInfoFragment : Fragment() {
 
             val dialogFragment = ParishImageDialog(viewModel, parishImageAdapter)
             dialogFragment.show(childFragmentManager, "parishImageDialog")
-
-//            binding.ltParishImages.visibility = View.VISIBLE
-//
-//            if (binding.etImageTitle.text?.isEmpty()!!) {
-//                //todo add a check for empty images too
-//                //todo add a check for empty lists
-//                binding.tilImageTitle.error = "Enter Image tile and select Image"
-//                return@setOnClickListener
-//            }
-//
-//            val parishImages = ImageModel(
-//                imgURI,
-//                binding.etImageTitle.text.toString(),
-//            )
-//
-//            viewModel.addParishImageList(parishImages)
-//
-//            // is this necessary already being done in adapter
-//            pastoralAdapter.notifyDataSetChanged()
-//
-//            val emptyString = ""
-//            val editable = Editable.Factory.getInstance().newEditable(emptyString)
-//
-//            binding.etImageTitle.text = editable
-//            binding.etImageTitle.error = null
         }
 
-//        binding.tvImagesDoneBtn.setOnClickListener {
-//            binding.ltParishImages.visibility = View.GONE
-//        }
 
-//        binding.ivSelectedImage.setOnClickListener {
-//            pickImage()
-//        }
-
-        //todo use alert dialogs to add images and pastoral team
         binding.btnPublish.setOnClickListener {
 
             if (!validateParishValues()) {
                 Toast.makeText(requireContext(), "All required fields not filled", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+
+            binding.progressBar.visibility = View.VISIBLE
 
             setValues()
 
@@ -281,7 +282,18 @@ class UpdateParishInfoFragment : Fragment() {
 
             viewModel.uploadParishInfo(requireContext())
 
-//            setValues()
+        }
+
+        viewModel.getUploadStatus().observe(viewLifecycleOwner) { isSuccess ->
+            if (isSuccess) {
+                binding.progressBar.visibility = View.INVISIBLE
+                Toast.makeText(requireContext(), "Upload successful", Toast.LENGTH_LONG).show()
+                //todo clear all calues after succes and or return to previous fragment
+            } else {
+                binding.progressBar.visibility = View.INVISIBLE
+                Toast.makeText(requireContext(), "Error Uploading Parish Info", Toast.LENGTH_LONG).show()
+            }
+
         }
 
         binding.rbUpdateBtn.setOnClickListener {
@@ -305,6 +317,8 @@ class UpdateParishInfoFragment : Fragment() {
                 diocese = binding.etDiocese.text.toString(),
                 deanery = binding.etDeanery.text.toString(),
                 pastoralTeam = viewModel.getPastoralList().value,
+                sundayMass = viewModel.getSundayMassList().value,
+                weekDayMass = viewModel.getWeekDayMassList().value,
                 parishImage = viewModel.getParishImageListUrl().value,
                 createdBy = viewModel.currentUser.toString()
             ))
@@ -354,52 +368,14 @@ class UpdateParishInfoFragment : Fragment() {
             return false
         }
 
+        if (viewModel.getSundayMassList().value == null || viewModel.getParishImageList().value!!.isEmpty()) {
+            Toast.makeText(requireContext(), "Add sunday masses ", Toast.LENGTH_SHORT).show()
+            return false
+        }
+
             return true
     }
 
-    /**
-     * Pastoral team setup
-     */
-//    fun validatePastoralTeam(): Boolean {
-//
-//        if(binding.etTitle.text?.isEmpty()!!) {
-//            binding.tilTitle.error = "Field must not be empty"
-//            return false
-//        }
-//
-//        binding.tilTitle.error = null
-//
-//        if(binding.etName.text?.isEmpty()!!) {
-//            binding.tilName.error = "Field must not be empty"
-//            return false
-//        }
-//
-//        binding.tilName.error = null
-//
-//        if(binding.etPosition.text?.isEmpty()!!) {
-//            binding.tilPosition.error = "Field must not be empty"
-//            return false
-//        }
-//
-//        binding.tilPosition.error = null
-//
-//        if(binding.etPhoneNumber.text?.isEmpty()!!) {
-//            binding.tilPhonenumber.error = "Field must not be empty"
-//            return false
-//        }
-//
-//        binding.tilPhonenumber.error = null
-//
-//        return true
-//    }
-
-//    private fun pickImage() {
-//        val intent = Intent()
-//        intent.type = "image/*"
-//        intent.action = (Intent.ACTION_GET_CONTENT)
-//
-//        pickImageLauncher.launch(intent)
-//    }
 
     /**
      * Toogle update and new addition radio buttons
@@ -416,7 +392,6 @@ class UpdateParishInfoFragment : Fragment() {
             }
         }
     }
-
 
 
     private fun checkPermissionForReadExtertalStorage(): Boolean {
