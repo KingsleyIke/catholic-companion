@@ -74,11 +74,11 @@ class DummyData {
         arrayListOf<Int>(R.drawable.st_cyril_church, R.drawable.st_cyril, R.drawable.image_cyril)
     private val sundayMass = arrayListOf("6:30am, First Mass", "7:30am, Children mass", "6:00pm, Evening mass")
     private val weekdayMass = arrayListOf(
-        WeekMasses("Monday", listOf("6:00am", "6:pm", "12:pm")),
-        WeekMasses("Wednesday", listOf("6:30am", "6:pm", "12:pm")),
-        WeekMasses("Thursday", listOf("6:00am", "6:pm", "12:pm")),
-        WeekMasses("Friday", listOf("6:00am", "6:pm")),
-        WeekMasses("Saturday", listOf("7:00am"))
+        WeekMasses("Monday", "6:00am, 6:pm, 12:pm"),
+        WeekMasses("Wednesday", "6:30am, 6:pm, 12:pm"),
+        WeekMasses("Thursday", "6:00am, 6:pm, 12:pm"),
+        WeekMasses("Friday", "6:00am 6:pm"),
+        WeekMasses("Saturday", "7:00am")
     )
     private val pastoralTeam = arrayListOf(
         PastoralTeam("Parish Priest", "Rev. Fr", "Rev. Fr Martin Uwakwe", "08037120696"),

@@ -24,7 +24,7 @@ class PastoralTeamDialog(val viewModel: UpdateParishInfoViewModel, val pastoralA
 
         //todo fix cancelable not working fine
         return AlertDialog.Builder(requireContext())
-            .setTitle("Enter Name")
+            .setTitle("Select Image and title")
             .setView(view)
             .setNegativeButton("Cancel") { _, _ ->
                 // Dialog was cancelled

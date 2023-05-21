@@ -6,5 +6,6 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class WeekMasses (
     val day: String?,
-    val time: List<String>?
+    val time: String?
+    //todo chnage time to list of string
         ) : Parcelable

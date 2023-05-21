@@ -1,16 +1,19 @@
 package com.kingstek.companion.ui.parish
 
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.kingstek.companion.R
 import com.kingstek.companion.databinding.FragmentParishDetailsBinding
@@ -150,7 +153,27 @@ class ParishDetailsFragment : Fragment() {
         }
 
         binding.tvUpdateParishInfo.setOnClickListener {
-            it.findNavController().navigate(R.id.updateParishInfoFragment)
+
+            val alertDialog = AlertDialog.Builder(requireContext())
+            alertDialog.setTitle("What do You want to update")
+            alertDialog.setItems(arrayOf<CharSequence>(
+                "Update Pastoral team and Images",
+                "Update Parish Info and Activities"
+            ),
+            DialogInterface.OnClickListener { dialog , which->
+                when (which) {
+                    0 -> {
+                        findNavController().navigate(R.id.updateParishInfoFragment)
+                    }
+                    1 -> {
+                        findNavController().navigate(R.id.updateMassFragment)
+                    }
+                }
+            })
+            alertDialog.setCancelable(false)
+            alertDialog.show()
+
+//            it.findNavController().navigate(R.id.updateParishInfoFragment)
         }
 
         return root

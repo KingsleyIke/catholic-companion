@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/updateParishInfoFragment">
+    app:startDestination="@id/nav_home">
 
     <fragment
         android:id="@+id/nav_home"
@@ -101,6 +101,9 @@
         <action
             android:id="@+id/action_parishDetailsFragment_to_logInFragment"
             app:destination="@id/logInFragment" />
+        <action
+            android:id="@+id/action_parishDetailsFragment_to_updateMassFragment"
+            app:destination="@id/updateMassFragment" />
     </fragment>
     <fragment
         android:id="@+id/mapsFragment"
@@ -181,4 +184,9 @@
         android:name="com.kingstek.companion.ui.prayers.PrayerDetailsFragment"
         android:label="fragment_prayer_details"
         tools:layout="@layout/fragment_prayer_details" />
+    <fragment
+        android:id="@+id/updateMassFragment"
+        android:name="com.kingstek.companion.ui.parish.updates.UpdateParishActivitiesFragment"
+        android:label="fragment_update_mass"
+        tools:layout="@layout/fragment_update_mass" />
 </navigation>
