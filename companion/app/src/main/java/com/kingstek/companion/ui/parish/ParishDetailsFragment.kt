@@ -40,7 +40,7 @@ class ParishDetailsFragment : Fragment() {
 
         val parishList = viewModel.parishList.value?.get(position)
 
-        val sundayMassList = parishList?.sundayMas
+        val sundayMassList = parishList?.sundayMass
         val weekdayMassList = parishList?.weekDayMass
         val pastoralTeamList = parishList?.pastoralTeam
         val announcementList = parishList?.churchAnnouncements

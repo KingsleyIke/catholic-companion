@@ -8,13 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.kingstek.companion.R
 import com.kingstek.companion.models.parish.ImageModel
 import com.kingstek.companion.onItemClickListener
-import com.kingstek.companion.ui.parish.ParishAdapter
 
 class ParishImageAdapter(val imageList: LiveData<ArrayList<ImageModel>>, val mListner: onItemClickListener): RecyclerView.Adapter<ParishImageAdapter.ViewHolder> () {
 
