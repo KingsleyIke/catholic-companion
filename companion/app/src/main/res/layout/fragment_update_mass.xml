@@ -23,7 +23,7 @@
                 android:textColorHint="@color/white"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/backround_rounded_darker_light_color_update_screen"
-                android:hint="Parish Names *">
+                android:hint="Parish Name *">
 
                 <androidx.appcompat.widget.AppCompatSpinner
                     android:id="@+id/sp_parish_name_spinner"
@@ -44,84 +44,85 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_category"
+            <!-- Church Activities-->
+            <TextView
+                android:id="@+id/church_activities_heading"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textColorHint="@color/white"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/backround_rounded_darker_light_color_update_screen"
-                android:hint="Category *">
+                android:gravity="center"
+                android:text="Add Church Activities"
+                android:textColor="@color/main_color_light_dark"
+                android:textStyle="bold" />
 
-                <androidx.appcompat.widget.AppCompatSpinner
-                    android:id="@+id/sp_category_spinner"
-                    android:layout_height="0dp"
-                    android:layout_width="match_parent"
-                    android:background="@drawable/backround_rounded_darker_light_color_update_screen"
-                    />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_church_activities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_category"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:inputType="text"
-                    android:focusable="false"
-                    android:textColor="@color/white"
-                    android:background="@drawable/backround_rounded_darker_light_color_update_screen"
-                    />
+            <TextView
+                android:id="@+id/tv_add_btn_activities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/backround_rounded_white"
+                android:elevation="20dp"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="10dp"
+                android:text="Add Church Activity"
+                android:textColor="@color/main_color_dark"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                />
 
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_title"
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textColorHint="@color/white"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/backround_rounded_darker_light_color_update_screen"
-                android:hint="Title *">
+                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/dark_color_background"
+                />
 
-                <androidx.appcompat.widget.AppCompatSpinner
-                    android:id="@+id/sp_title_spinner"
-                    android:layout_height="0dp"
-                    android:layout_width="match_parent"
-                    android:background="@drawable/backround_rounded_darker_light_color_update_screen"
-                    />
-
-                <!--todo add drop down icon toogle on click-->
-                <!--todo add question mark icon-->
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:inputType="text"
-                    android:focusable="false"
-                    android:textColor="@color/white"
-                    android:background="@drawable/backround_rounded_darker_light_color_update_screen"
-                    />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_information"
+            <!-- Church Announcements-->
+            <TextView
+                android:id="@+id/church_announcement_heading"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textColorHint="@color/white"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/backround_rounded_darker_light_color_update_screen"
-                android:hint="Information *">
+                android:gravity="center"
+                android:text="Add Church Announcements"
+                android:textColor="@color/main_color_light_dark"
+                android:textStyle="bold" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_information"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:inputType="text"
-                    android:focusable="false"
-                    android:textColor="@color/white"
-                    android:background="@drawable/backround_rounded_darker_light_color_update_screen"
-                    />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_church_announcements"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:id="@+id/tv_add_btn_announcement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/backround_rounded_white"
+                android:elevation="20dp"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="10dp"
+                android:text="Add Church Activity"
+                android:textColor="@color/main_color_dark"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/dark_color_background"
+                />
 
             <TextView
                 android:id="@+id/btn_publish"
@@ -142,5 +143,11 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginBottom="5dp"
+        />
 
 </LinearLayout>

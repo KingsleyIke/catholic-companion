@@ -1,5 +1,6 @@
 package com.kingstek.companion.ui.parish
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,11 +8,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.kingstek.companion.R
 import com.kingstek.companion.dummy_data.ParishModel
+import com.kingstek.companion.models.parish.Parish
 import com.kingstek.companion.onItemClickListener
 
-class ParishAdapter(private val parishModel: MutableLiveData<List<ParishModel>>, private var mListner: onItemClickListener) : RecyclerView.Adapter<ParishAdapter.ViewHolder> () {
+class ParishAdapter(private val parishModel: List<Parish>, private var mListner: onItemClickListener, private val context: Context) : RecyclerView.Adapter<ParishAdapter.ViewHolder> () {
 
 //    fun setOnclickListener(listner: onItemClickListener) {
 //        mListner = listner
@@ -25,32 +29,37 @@ class ParishAdapter(private val parishModel: MutableLiveData<List<ParishModel>>,
     }
 
     override fun onBindViewHolder(holder: ParishAdapter.ViewHolder, position: Int) {
-        val parish = parishModel.value?.get(position)
+        val parish = parishModel[position]
 
-        val parishName = holder.parishNamem
-        parishName.text = parish?.parishName
+        val parishName = holder.parishName
+        parishName.text = parish.parishName
 
         val address = holder.address
-        address.text = parish?.address
+        address.text = parish.address
 
         val deanery = holder.deanery
-        deanery.text = parish?.deanery
+        deanery.text = parish.deanery
 
         val diocese = holder.diocese
-        diocese.text = parish?.diocese
+        diocese.text = parish.diocese
 
         //Todo find a way to identify main parish image to use on recycler view
         val image = holder.image
-        parish?.parishImage?.get(1)?.let { image.setImageResource(it) }
+        parish.parishImage?.get(1)?.let {
+            Glide.with(context)
+                .load(it)
+                .apply(RequestOptions().centerCrop())
+                .into(image)
+        }
 
     }
 
     override fun getItemCount(): Int {
-       return parishModel.value?.size as Int
+       return parishModel.size as Int
     }
 
     inner class ViewHolder (itemView : View, listner: onItemClickListener) : RecyclerView.ViewHolder(itemView) {
-        val parishNamem: TextView = itemView.findViewById<TextView>(R.id.tv_parish_name)
+        val parishName: TextView = itemView.findViewById<TextView>(R.id.tv_parish_name)
         val address = itemView.findViewById<TextView>(R.id.tv_parish_address)
         val deanery = itemView.findViewById<TextView>(R.id.tv_deanery)
         val diocese = itemView.findViewById<TextView>(R.id.tv_diocese)

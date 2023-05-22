@@ -11,7 +11,11 @@ import com.kingstek.companion.dummy_data.DummyData
 import com.kingstek.companion.dummy_data.NewsModel
 import com.kingstek.companion.dummy_data.ParishModel
 import com.kingstek.companion.models.diocese.Diocese
+import com.kingstek.companion.models.parish.Parish
 import com.kingstek.companion.utils.Constants
+import kotlin.coroutines.resume
+import kotlin.coroutines.resumeWithException
+import kotlin.coroutines.suspendCoroutine
 
 //A base viewModel to load all como=mon codes across all viewModels
 open class BaseViewModel : ViewModel() {
@@ -44,6 +48,10 @@ open class BaseViewModel : ViewModel() {
     val deaneryList: MutableLiveData<List<String>>
         get() = _deaneryList
 
+    private val _parishList = MutableLiveData<List<Parish>>()
+    val parishList: MutableLiveData<List<Parish>>
+        get() = _parishList
+
 
     val data = DummyData()
 
@@ -52,15 +60,14 @@ open class BaseViewModel : ViewModel() {
     }
     val newsList = _newsList
 
-
 //    private val _parishList = MutableLiveData<List<ParishModel>>()
 //    val parishList: MutableLiveData<List<ParishModel>>
 //        get() = _parishList
 
-    private val _parishList =  MutableLiveData<List<ParishModel>>().apply {
-        value = data.parishList
-    }
-    val parishList = _parishList
+//    private val _parishList =  MutableLiveData<List<ParishModel>>().apply {
+//        value = data.parishList
+//    }
+//    val parishList = _parishList
 
     fun isUserSignedIn(): Boolean {
         if(currentUser != null) {
@@ -75,6 +82,28 @@ open class BaseViewModel : ViewModel() {
 
     fun logOut() {
         FirebaseAuth.getInstance().signOut()
+    }
+
+    suspend fun getParishList(): List<Parish> = suspendCoroutine  { continuation ->
+
+        mFirestore.collection(Constants.PARISH)
+            .get()
+            .addOnSuccessListener {
+//                diocesName.value = it.documents[0].data?.get("dioceseName") as String
+                parishList.value = it.documents as List<Parish>
+
+                continuation.resume(parishList.value!!)
+
+                Log.d("resulting deanery", parishList.value.toString())
+                Log.d("resulting dioses", it.documents.toString())
+                Log.d("resulting dioses", it.documents.get(0).id)
+                Log.d("resulting dioses", it.documents.get(0).data.toString())
+//                Log.d("resulting dioses", it.documents.get(0).data?.get("dioceseList").toString())
+            }
+            .addOnFailureListener {
+                Log.d("ERROR DOCESES", it.message.toString(), it)
+                continuation.resumeWithException(it)
+            }
     }
 
     fun getDioceseList() {

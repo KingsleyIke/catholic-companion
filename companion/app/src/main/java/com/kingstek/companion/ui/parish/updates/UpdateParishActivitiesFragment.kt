@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.kingstek.companion.databinding.FragmentUpdateMassBinding
 
-//todo add loading icon for publish
 //todo add office line to parish
 
 class UpdateParishActivitiesFragment : Fragment() {
@@ -23,8 +22,6 @@ class UpdateParishActivitiesFragment : Fragment() {
         val root: View = binding.root
 
         viewModel = ViewModelProvider(this)[UpdateParishActivitiesViewModel::class.java]
-
-
 
         return root
     }

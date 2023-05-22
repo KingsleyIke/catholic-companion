@@ -1,7 +1,8 @@
 package com.kingstek.companion.ui.parish.updates
 
-import androidx.lifecycle.ViewModel
+import com.kingstek.companion.ui.BaseViewModel
 
-class UpdateParishActivitiesViewModel: ViewModel(){
+class UpdateParishActivitiesViewModel: BaseViewModel(){
+
 
 }
